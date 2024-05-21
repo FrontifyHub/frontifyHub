@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "design-component": ["packages/design-component/src"]
+    }
+  },
+  "include": ["packages/*/src"]
+}

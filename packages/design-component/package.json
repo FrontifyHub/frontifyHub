@@ -1,0 +1,21 @@
+{
+  "name": "design-component",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3"
+  }
+}
