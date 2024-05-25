@@ -1,9 +1,10 @@
 {
-  "name": "@frontifyHub/design-component",
+  "name": "@frontifyHub/common-ui",
   "version": "0.1.0",
   "main": "src/",
   "dependencies": {
-    "typescript": "latest"
+    "typescript": "latest",
+    "@frontifyHub/design-component": "*"
   },
   "devDependencies": {
     "typescript": "^5",
