@@ -1,12 +1,7 @@
 {
-  "name": "design-component",
+  "name": "@frontifyHub/design-component",
   "version": "0.1.0",
-  "private": true,
-  "scripts": {
-  },
-  "exports": {
-    ".": "./src/index.ts"
-  },
+  "main": "src/",
   "dependencies": {
     "typescript": "latest"
   },
