@@ -2,8 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "design-component": ["packages/design-component/src"]
+      "@frontifyHub/design-component/*": ["packages/design-component/src/*"],
+      "@frontifyHub/common-ui/*": ["packages/common-ui/src/*"]
     }
   },
-  "include": ["packages/*/src"]
+  "include": ["packages/*/src/*"]
 }
