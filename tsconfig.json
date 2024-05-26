@@ -3,7 +3,9 @@
     "baseUrl": ".",
     "paths": {
       "@frontifyHub/design-component/*": ["packages/design-component/src/*"],
-      "@frontifyHub/common-ui/*": ["packages/common-ui/src/*"]
+      "@frontifyHub/common-ui/*": ["packages/common-ui/src/*"],
+      "@frontifyHub/common/*": ["packages/common/src/*"],
+      "@frontifyHub/common-type/*": ["packages/common-type/src/*"]
     }
   },
   "include": ["packages/*/src/*"]
