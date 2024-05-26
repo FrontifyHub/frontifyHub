@@ -1,18 +1,26 @@
-import {
-  Button,
-  ButtonGroup,
-  ExampleTemplete,
-  FormButtton,
-} from "@frontifyHub/common-ui/index";
+"use client";
 import styles from "./page.module.css";
+import { Language, useLocalization } from "@frontifyHub/common/localization";
 
 export default function Home() {
+  const { t, changeLanguage } = useLocalization();
   return (
     <main className={styles.main}>
-      <Button />
-      <ButtonGroup />
-      <ExampleTemplete />
-      <FormButtton />
+      {t("home.body")}
+      <button
+        onClick={() => {
+          changeLanguage(Language.Spanish);
+        }}
+      >
+        {t("button.language.spanish")}
+      </button>
+      <button
+        onClick={() => {
+          changeLanguage(Language.English);
+        }}
+      >
+        {t("button.language.english")}
+      </button>
     </main>
   );
 }
