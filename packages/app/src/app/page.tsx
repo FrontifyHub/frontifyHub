@@ -1,4 +1,5 @@
 "use client";
+import { Button, Link } from "@chakra-ui/react";
 import styles from "./page.module.css";
 import { Language, useLocalization } from "@frontifyHub/common/localization";
 
@@ -21,6 +22,10 @@ export default function Home() {
       >
         {t("button.language.english")}
       </button>
+      <Button bgColor="frontifyHub.green">adasdsadsa</Button>
+
+      <h1>Home</h1>
+      <Link href="/about">About</Link>
     </main>
   );
 }
