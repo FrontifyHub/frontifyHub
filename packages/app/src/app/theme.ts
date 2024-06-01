@@ -50,11 +50,11 @@ const baseEditorStyle: SystemStyleFunction = () => ({
 
 const colors = {
     frontifyHub: {
-        yellow: "#ffc800",
-        blue: "#3671f0",
-        green: "#20b893",
-        gray: "#e9ebed",
-        black: "#273b4a",
+        primary: "#A393BF",
+        violetFR: "#9882AC",
+        blackFR: "#1F1F1F",
+        blueFR: "#090C9B",
+        ivoryFR: "#FBFFF1",
         red: "#ec615b",
         orange: "#f39034",
     },
