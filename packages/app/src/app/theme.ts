@@ -1,6 +1,8 @@
 "use client"
 import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react"; 
 import type { SystemStyleFunction } from "@chakra-ui/theme-tools";
+import { withProse } from '@nikolovlazar/chakra-ui-prose'
+
 
 const baseEditorStyle: SystemStyleFunction = () => ({
     "p, ul, ol, li": {
@@ -125,40 +127,6 @@ const breakpoints = {
     "3xl": "1920px",
 };
 
-const Heading = {
-    baseStyle: {
-        // fontWeight: "semibold"
-    },
-    sizes: {
-        xl: {
-            letterSpacing: "tighter",
-        },
-    },
-    variants: {
-        allCaps: {
-            textTransform: "uppercase",
-        },
-    },
-    defaultProps: {
-        // size: "xl",
-        // lineHeight: "shorter",
-    },
-};
-
-const Text = {
-    baseStyle: {
-        // fontSize: "xl"
-    },
-    defaultProps: {},
-};
-
-const Button = {
-    baseStyle: {
-        borderRadius: "0",
-        fontWeight: "600",
-    },
-};
-
 const frontifyHubTheme = extendTheme(
     {
         initialColorMode: "light",
@@ -166,17 +134,12 @@ const frontifyHubTheme = extendTheme(
         breakpoints,
         colors,
         ...typography,
-        components: {
-            Heading,
-            Text,
-            Button,
-            Progress
-        },
     },
-    withDefaultColorScheme({
-        colorScheme: "black",
-        components: ["Button"],
-    })
+    // withDefaultColorScheme({
+    //     colorScheme: "black",
+    //     components: ["Button"],
+    // }),
+    withProse({ baseStyle: baseEditorStyle })
 );
 
 export default frontifyHubTheme;
