@@ -1,5 +1,6 @@
 import { AbsoluteSize } from "../../baseUnit/AbsoluteSize";
 import { RelativeSize } from "../../baseUnit/RelativeSize";
+import { IBaseStyle } from "../IBaseStyle";
 
 export type PaddingSize = AbsoluteSize | RelativeSize;
 
@@ -9,7 +10,6 @@ export interface IPadding {
   top?: PaddingSize;
   bottom?: PaddingSize;
 
-  toString(): string;
   setPadding(value: string): this;
   setLeft(value: string): this;
   setRight(value: string): this;

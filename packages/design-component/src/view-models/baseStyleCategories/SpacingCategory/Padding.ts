@@ -1,8 +1,9 @@
 import { IPadding, PaddingSize } from "../../../models/baseStyleCategories/SpacingCategory/IPadding";
 import { AbsoluteSizeUnit } from "../../../models/baseUnit/AbsoluteSize";
 import { RelativeSizeUnit } from "../../../models/baseUnit/RelativeSize";
+import { BaseStyle } from "../BaseStyle";
 
-export class Padding implements IPadding {
+export class Padding extends BaseStyle implements IPadding  {
 
     left?: PaddingSize;
     right?: PaddingSize;
@@ -39,7 +40,7 @@ export class Padding implements IPadding {
     }
 
 
-    private formatSize(size?: PaddingSize): string {
+    formatSize(size?: PaddingSize): string {
         if (!size) return "undefined";
         return `${size.value}${size.unit}`;
     }

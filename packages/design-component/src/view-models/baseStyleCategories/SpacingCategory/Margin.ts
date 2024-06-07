@@ -1,8 +1,9 @@
 import { IMargin, MarginSize } from "../../../models/baseStyleCategories/SpacingCategory/IMargin";
 import { AbsoluteSizeUnit } from "../../../models/baseUnit/AbsoluteSize";
 import { RelativeSizeUnit } from "../../../models/baseUnit/RelativeSize";
+import { BaseStyle } from "../BaseStyle";
 
-export class Margin implements IMargin {
+export class Margin extends BaseStyle implements IMargin {
 
     left?: MarginSize;
     right?: MarginSize;
@@ -39,13 +40,13 @@ export class Margin implements IMargin {
     }
 
 
-    private formatSize(size?: MarginSize): string {
+    formatSize(size?: MarginSize): string {
         if (!size) return "undefined";
         return `${size.value}${size.unit}`;
     }
 
     toString(): string {
-        return `margin(left=${this.formatSize(this.left)}, right=${this.formatSize(this.right)}, top=${this.formatSize(this.top)}, bottom=${this.formatSize(this.bottom)})`;
+        return `margin::left=${this.formatSize(this.left)}::right=${this.formatSize(this.right)}::top=${this.formatSize(this.top)}::bottom=${this.formatSize(this.bottom)}`;
 
     }
     setLeft(value: string): this {

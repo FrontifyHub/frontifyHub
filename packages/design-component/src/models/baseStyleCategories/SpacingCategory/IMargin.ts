@@ -9,7 +9,6 @@ export interface IMargin {
   top?: MarginSize;
   bottom?: MarginSize;
 
-  toString(): string;
   setMargin(value: string): this;
   setLeft(value: string): this;
   setRight(value: string): this;
