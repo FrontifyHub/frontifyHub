@@ -4,5 +4,15 @@
     "statusBarItem.remoteBackground": "#A393BF",
     "activityBar.background": "#A393BF",
     "titleBar.activeBackground": "#A393BF",
+
+    "activityBar.foreground": "#220101",
+    "activityBar.inactiveForeground": "#00000099",
+    "activityBarBadge.background": "#422c74",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.foreground": "#000000",
+    "statusBarItem.remoteForeground": "#000000",
+    "titleBar.activeForeground": "#000000",
+    "titleBar.inactiveForeground": "#00000099",
+    "commandCenter.border": "#00000099"
   }
 }
