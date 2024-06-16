@@ -1,4 +1,3 @@
-import { beforeEach } from 'node:test';
 import { SizeCategory } from '../src/view-models/baseStyleCategories/SizingCategory/SizingCategory'
 import { SLASH_HASH } from '../src/constant/slashHash';
 

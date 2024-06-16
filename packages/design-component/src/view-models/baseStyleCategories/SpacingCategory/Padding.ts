@@ -1,3 +1,4 @@
+import { SLASH_HASH } from "../../../constant/slashHash";
 import { IPadding, PaddingSize } from "../../../models/baseStyleCategories/SpacingCategory/IPadding";
 import { AbsoluteSizeUnit } from "../../../models/baseUnit/AbsoluteSize";
 import { RelativeSizeUnit } from "../../../models/baseUnit/RelativeSize";
@@ -41,12 +42,12 @@ export class Padding extends BaseStyle implements IPadding  {
 
 
     formatSize(size?: PaddingSize): string {
-        if (!size) return "undefined";
+        if (!size) return "0";
         return `${size.value}${size.unit}`;
     }
 
     toString(): string {
-        return `padding(left=${this.formatSize(this.left)}, right=${this.formatSize(this.right)}, top=${this.formatSize(this.top)}, bottom=${this.formatSize(this.bottom)})`;
+        return `padding${SLASH_HASH}${this.formatSize(this.top)} ${this.formatSize(this.right)} ${this.formatSize(this.bottom)} ${this.formatSize(this.left)}`;
 
     }
     setLeft(value: string): this {
