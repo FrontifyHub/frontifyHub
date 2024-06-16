@@ -3,10 +3,13 @@ import { Link, Button, ColorModeScript, useColorMode } from "@chakra-ui/react";
 import styles from "./page.module.css";
 import { Language, useLocalization } from "@frontifyHub/common/localization";
 import frontifyHubTheme from "./theme";
+import ButtonTesting from "./ButtonTesting";
+import { useAppSelector } from "@frontifyHub/common/redux/store";
 
 export default function Home() {
   const { t, changeLanguage } = useLocalization();
   const { colorMode, toggleColorMode } = useColorMode();
+  const username = useAppSelector((state) => state.auth.value.username);
   return (
     <main className={styles.main}>
       {t("home.body")}
@@ -31,6 +34,8 @@ export default function Home() {
       <Button bgColor="fron">adasdsadsa</Button>
       <h1>Home</h1>
       <Link href="/about">About</Link>
+      <ButtonTesting />
+      <div>Username: {username}</div>
     </main>
   );
 }
