@@ -27,14 +27,14 @@ export class SizeCategory implements ISizingCategory {
 
     setMinWidth(value: string): this {
         if (!this.minWidth) {
-            this.minWidth = new Width();
+            this.minWidth = new Width('min-width');
         }
         this.minWidth.setSize(value);
         return this;
     }
     setMaxWidth(value: string): this {
         if (!this.maxWidth) {
-            this.maxWidth = new Width();
+            this.maxWidth = new Width('max-width');
         }
         this.maxWidth.setSize(value);
         return this;
@@ -42,14 +42,14 @@ export class SizeCategory implements ISizingCategory {
 
     setMinHeight(value: string): this {
         if (!this.minHeight) {
-            this.minHeight = new Width();
+            this.minHeight = new Height('min-height');
         }
         this.minHeight.setSize(value);
         return this;
     }
     setMaxHeight(value: string): this {
         if (!this.maxHeight) {
-            this.maxHeight = new Width();
+            this.maxHeight = new Height('max-height');
         }
         this.maxHeight.setSize(value);
         return this;

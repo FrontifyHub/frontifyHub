@@ -1,3 +1,4 @@
+import { SLASH_HASH } from "../../../constant/slashHash";
 import { IHeight } from "../../../models";
 import { ISize, SizeUnit } from "../../../models/baseStyleCategories/SizingCategory/ISize";
 import { IWidth } from "../../../models/baseStyleCategories/SizingCategory/IWidth";
@@ -7,7 +8,14 @@ import { BaseStyle } from "../BaseStyle";
 
 export class Height extends BaseStyle implements IHeight, ISize {
     height?: SizeUnit;
+    type?: 'height' | 'min-height' | 'max-height' = 'height';
 
+    constructor(type?: 'height' | 'min-height' | 'max-height') {
+        super();
+        if (type) {
+            this.type = type;
+        }
+    }
     setSize(value: string): this {
         const regex = /(\d+(?:\.\d+)?)(px|em|rem|vh|vw|%)/;
         const match = value.match(regex);
@@ -54,6 +62,6 @@ export class Height extends BaseStyle implements IHeight, ISize {
     }
 
     toString(): string {
-        return `height::${this.formatSize(this.height)};`
+        return `${this.type}${SLASH_HASH}${this.formatSize(this.height)}`
     }
 }
