@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { LocalizationProvider } from "@frontifyHub/common/localization";
-import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
+import { ReduxProvider } from "@frontifyHub/common/redux";
+import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./theme";
 import "./globals.css";
 
@@ -21,7 +22,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ChakraProvider theme={theme}>
-          <LocalizationProvider>{children}</LocalizationProvider>
+          <LocalizationProvider>
+            <ReduxProvider>{children}</ReduxProvider>
+          </LocalizationProvider>
         </ChakraProvider>
       </body>
     </html>
