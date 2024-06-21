@@ -1,8 +1,11 @@
 {
-  "name": "@frontifyHub/design-component",
+  "name": "@frontifyHub/canvas",
   "version": "0.1.0",
   "main": "src/",
   "dependencies": {
+    "@frontifyHub/design-component": "*",
+    "@frontifyHub/common-type": "*",
+    "@frontifyHub/transformer": "*",
     "typescript": "latest"
   },
   "devDependencies": {

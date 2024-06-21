@@ -1,10 +1,11 @@
+import { BaseStyle } from "../../../view-models/baseStyleCategories/BaseStyle";
 import { AbsoluteSize } from "../../baseUnit/AbsoluteSize";
 import { RelativeSize } from "../../baseUnit/RelativeSize";
 import { IBaseStyle } from "../IBaseStyle";
 
 export type PaddingSize = AbsoluteSize | RelativeSize;
 
-export interface IPadding {
+export interface IPadding extends BaseStyle {
   left?: PaddingSize;
   right?: PaddingSize;
   top?: PaddingSize;

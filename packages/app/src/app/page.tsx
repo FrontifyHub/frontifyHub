@@ -1,8 +1,15 @@
 "use client";
-import { Link, Button, ColorModeScript, useColorMode } from "@chakra-ui/react";
+import {
+  Link,
+  Button,
+  ColorModeScript,
+  useColorMode,
+  Box,
+} from "@chakra-ui/react";
 import styles from "./page.module.css";
 import { Language, useLocalization } from "@frontifyHub/common/localization";
 import frontifyHubTheme from "./theme";
+import { Canvas } from "../../../canvas/src/Canvas";
 
 export default function Home() {
   const { t, changeLanguage } = useLocalization();
@@ -31,6 +38,7 @@ export default function Home() {
       <Button bgColor="fron">adasdsadsa</Button>
       <h1>Home</h1>
       <Link href="/about">About</Link>
+      <Canvas />
     </main>
   );
 }

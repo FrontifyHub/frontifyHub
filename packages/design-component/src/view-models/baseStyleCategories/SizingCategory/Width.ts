@@ -5,24 +5,23 @@ import { AbsoluteSizeUnit } from "../../../models/baseUnit/AbsoluteSize";
 import { RelativeSizeUnit } from "../../../models/baseUnit/RelativeSize";
 import { BaseStyle } from "../BaseStyle";
 
-export class Width extends BaseStyle implements IWidth, ISize {
+export class Width implements IWidth, ISize {
   width?: SizeUnit;
   type?: 'width' | 'min-width' | 'max-width' = 'width';
 
   constructor(type?: 'width' | 'min-width' | 'max-width') {
-    super();
     if (type) {
       this.type = type;
     }
   }
 
-  formatSize(value?: SizeUnit): string {
-    if (!value) return ''
-    return `${value.value}${value.unit}`;
+  value(): string {
+    if (!this.width) return ''
+    return `${this.width.value}${this.width.unit}`;
   }
 
   toString(): string {
-    return `${this.type}${SLASH_HASH}${this.formatSize(this.width)}`
+    return `${this.type}${SLASH_HASH}${this.value()}`
   }
 
   private getUnitType(unit: string): AbsoluteSizeUnit.PX | RelativeSizeUnit {

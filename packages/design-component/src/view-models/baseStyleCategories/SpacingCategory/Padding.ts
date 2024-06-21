@@ -2,10 +2,8 @@ import { SLASH_HASH } from "../../../constant/slashHash";
 import { IPadding, PaddingSize } from "../../../models/baseStyleCategories/SpacingCategory/IPadding";
 import { AbsoluteSizeUnit } from "../../../models/baseUnit/AbsoluteSize";
 import { RelativeSizeUnit } from "../../../models/baseUnit/RelativeSize";
-import { BaseStyle } from "../BaseStyle";
 
-export class Padding extends BaseStyle implements IPadding  {
-
+export class Padding implements IPadding  {
     left?: PaddingSize;
     right?: PaddingSize;
     top?: PaddingSize;
@@ -40,14 +38,12 @@ export class Padding extends BaseStyle implements IPadding  {
         return { value, unit };
     }
 
-
-    formatSize(size?: PaddingSize): string {
-        if (!size) return "0";
-        return `${size.value}${size.unit}`;
+    value(): string {
+         return `${this.top?.value ?? "0"}${this.top?.unit} ${this.right?.value ?? "0"}${this.right?.unit} ${this.bottom?.value ?? "0"}${this.bottom?.unit} ${this.left?.value ?? "0"}${this.left?.unit}`;
     }
 
     toString(): string {
-        return `padding${SLASH_HASH}${this.formatSize(this.top)} ${this.formatSize(this.right)} ${this.formatSize(this.bottom)} ${this.formatSize(this.left)}`;
+        return `padding${SLASH_HASH}`;
 
     }
     setLeft(value: string): this {

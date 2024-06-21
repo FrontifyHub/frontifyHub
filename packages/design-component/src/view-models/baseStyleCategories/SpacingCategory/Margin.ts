@@ -2,10 +2,8 @@ import { SLASH_HASH } from "../../../constant/slashHash";
 import { IMargin, MarginSize } from "../../../models/baseStyleCategories/SpacingCategory/IMargin";
 import { AbsoluteSizeUnit } from "../../../models/baseUnit/AbsoluteSize";
 import { RelativeSizeUnit } from "../../../models/baseUnit/RelativeSize";
-import { BaseStyle } from "../BaseStyle";
 
-export class Margin extends BaseStyle implements IMargin {
-
+export class Margin implements IMargin {
     left?: MarginSize;
     right?: MarginSize;
     top?: MarginSize;
@@ -41,13 +39,12 @@ export class Margin extends BaseStyle implements IMargin {
     }
 
 
-    formatSize(size?: MarginSize): string {
-        if (!size) return "0";
-        return `${size.value}${size.unit}`;
+    value(): string {
+        return `${this.top?.value ?? "0"}${this.top?.unit} ${this.right?.value ?? "0"}${this.right?.unit} ${this.bottom?.value ?? "0"}${this.bottom?.unit} ${this.left?.value ?? "0"}${this.left?.unit}`;
     }
 
     toString(): string {
-        return `margin${SLASH_HASH}${this.formatSize(this.top)} ${this.formatSize(this.right)} ${this.formatSize(this.bottom)} ${this.formatSize(this.left)}`;
+        return `margin${SLASH_HASH}${this.value()}`;
 
     }
     setLeft(value: string): this {

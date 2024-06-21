@@ -3,7 +3,7 @@ import { ISizingCategory } from "../../../models/baseStyleCategories/SizingCateg
 import { Height } from "./Height";
 import { Width } from "./Width";
 
-export class SizeCategory implements ISizingCategory {
+export class SizingCategory implements ISizingCategory {
     width: Width;
     height: Height;
     maxHeight?: Height;

@@ -6,12 +6,11 @@ import { AbsoluteSizeUnit } from "../../../models/baseUnit/AbsoluteSize";
 import { RelativeSizeUnit } from "../../../models/baseUnit/RelativeSize";
 import { BaseStyle } from "../BaseStyle";
 
-export class Height extends BaseStyle implements IHeight, ISize {
+export class Height  implements IHeight, ISize {
     height?: SizeUnit;
     type?: 'height' | 'min-height' | 'max-height' = 'height';
 
     constructor(type?: 'height' | 'min-height' | 'max-height') {
-        super();
         if (type) {
             this.type = type;
         }
@@ -56,12 +55,12 @@ export class Height extends BaseStyle implements IHeight, ISize {
         return this;
     }
 
-    formatSize(size?: SizeUnit): string {
-        if (!size) return '';
-        return `${size.value}${size.unit}`;
+    value(): string {
+        if (!this.height) return '';
+        return `${this.height.value}${this.height.unit}`;
     }
 
     toString(): string {
-        return `${this.type}${SLASH_HASH}${this.formatSize(this.height)}`
+        return `${this.type}${SLASH_HASH}${this.value()}`
     }
 }
