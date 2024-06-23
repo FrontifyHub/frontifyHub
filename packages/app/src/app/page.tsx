@@ -1,36 +1,28 @@
 "use client";
-import { Link, Button, ColorModeScript, useColorMode } from "@chakra-ui/react";
+
+import { useLocalization } from "@frontifyHub/common/localization";
 import styles from "./page.module.css";
-import { Language, useLocalization } from "@frontifyHub/common/localization";
-import frontifyHubTheme from "./theme";
+import { Button, useColorMode } from "@chakra-ui/react";
+import { IntroSection } from "@frontifyHub/common-ui/templates";
 
 export default function Home() {
-  const { t, changeLanguage } = useLocalization();
   const { colorMode, toggleColorMode } = useColorMode();
+  const { t } = useLocalization();
+
+  const title = {
+    release: `${t("home_section1-releaseButton")}`,
+    access: `${t("home_section1-accessButton")}`,
+    logo: "favicon.ico",
+    header2: `${t("home_section1-header2")}`,
+    convert: `${t("home_section1-convert")}`,
+  };
+
   return (
     <main className={styles.main}>
-      {t("home.body")}
-      <ColorModeScript initialColorMode={frontifyHubTheme.initialColorMode} />
-      <Button onClick={toggleColorMode}>
+      {/* <Button onClick={toggleColorMode}>
         Toggle {colorMode === "light" ? "Dark" : "Light"}
-      </Button>
-      <button
-        onClick={() => {
-          changeLanguage(Language.Spanish);
-        }}
-      >
-        {t("button.language.spanish")}
-      </button>
-      <button
-        onClick={() => {
-          changeLanguage(Language.English);
-        }}
-      >
-        {t("button.language.english")}
-      </button>
-      <Button bgColor="fron">adasdsadsa</Button>
-      <h1>Home</h1>
-      <Link href="/about">About</Link>
+      </Button> */}
+      <IntroSection title={title} />
     </main>
   );
 }
