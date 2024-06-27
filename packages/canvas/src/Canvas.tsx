@@ -1,5 +1,4 @@
 import React from "react";
-import { Height } from "@frontifyHub/design-component";
 import { BlockTree as BlockTreeType } from "@frontifyHub/common-type";
 import { BlockTree } from "./block/BlockTree";
 
@@ -19,9 +18,5 @@ export const Canvas = () => {
     ],
   };
 
-  return (
-    <div>
-      <BlockTree blockTree={block} />
-    </div>
-  );
+  return <BlockTree blockTree={block} />;
 };

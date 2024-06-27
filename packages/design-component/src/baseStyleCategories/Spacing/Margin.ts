@@ -1,15 +1,29 @@
-import { SLASH_HASH } from "../../../constant/slashHash";
-import { IPadding, PaddingSize } from "../../../models/baseStyleCategories/SpacingCategory/IPadding";
-import { AbsoluteSizeUnit } from "../../../models/baseUnit/AbsoluteSize";
-import { RelativeSizeUnit } from "../../../models/baseUnit/RelativeSize";
+import { SLASH_HASH } from "../../constant/slashHash";
+import { IBaseStyle } from "../../models/IBaseStyle";
+import { AbsoluteSizeUnit } from "../../models/baseUnit/AbsoluteSize";
+import { RelativeSizeUnit } from "../../models/baseUnit/RelativeSize";
+import { SizeUnit } from "../../models/baseUnit/SizeUnit";
 
-export class Padding implements IPadding  {
-    left?: PaddingSize;
-    right?: PaddingSize;
-    top?: PaddingSize;
-    bottom?: PaddingSize;
+export interface IMargin extends IBaseStyle {
+    left?: SizeUnit;
+    right?: SizeUnit;
+    top?: SizeUnit;
+    bottom?: SizeUnit;
 
-    private setAllSides(size: PaddingSize): void {
+    setMargin(value: string): this;
+    setLeft(value: string): this;
+    setRight(value: string): this;
+    setTop(value: string): this;
+    setBottom(value: string): this;
+}
+
+export class Margin implements IMargin {
+    left?: SizeUnit;
+    right?: SizeUnit;
+    top?: SizeUnit;
+    bottom?: SizeUnit;
+
+    private setAllSides(size: SizeUnit): void {
         this.left = this.right = this.top = this.bottom = size;
     }
 
@@ -17,7 +31,7 @@ export class Padding implements IPadding  {
         return this;
     }
 
-    private builderParseSize(size: string): PaddingSize {
+    private builderParseSize(size: string): SizeUnit {
         const unitSize = []
 
         for (const absKey of Object.values(AbsoluteSizeUnit)) {
@@ -31,19 +45,20 @@ export class Padding implements IPadding  {
         const regexPattern = new RegExp(`^(\\d+)(${conditionUnitSize})$`);
         const match = size.match(regexPattern);
         if (!match) {
-            throw new Error(`Invalid size format padding: ${conditionUnitSize}`);
+            throw new Error(`Invalid size format margin: ${conditionUnitSize}`);
         }
         const value = parseInt(match[1], 10);
-        const unit = match[2] as PaddingSize["unit"];
+        const unit = match[2] as SizeUnit["unit"];
         return { value, unit };
     }
 
+
     value(): string {
-         return `${this.top?.value ?? "0"}${this.top?.unit} ${this.right?.value ?? "0"}${this.right?.unit} ${this.bottom?.value ?? "0"}${this.bottom?.unit} ${this.left?.value ?? "0"}${this.left?.unit}`;
+        return `${this.top?.value ?? "0"}${this.top?.unit} ${this.right?.value ?? "0"}${this.right?.unit} ${this.bottom?.value ?? "0"}${this.bottom?.unit} ${this.left?.value ?? "0"}${this.left?.unit}`;
     }
 
     toString(): string {
-        return `padding${SLASH_HASH}`;
+        return `margin${SLASH_HASH}${this.value()}`;
 
     }
     setLeft(value: string): this {
@@ -70,7 +85,7 @@ export class Padding implements IPadding  {
         return this.build();
     }
 
-    setPadding(value: string): this {
+    setMargin(value: string): this {
         const values = value.split(" ");
         switch (values.length) {
             case 1:

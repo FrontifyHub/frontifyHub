@@ -1,15 +1,30 @@
-import { SLASH_HASH } from "../../../constant/slashHash";
-import { IMargin, MarginSize } from "../../../models/baseStyleCategories/SpacingCategory/IMargin";
-import { AbsoluteSizeUnit } from "../../../models/baseUnit/AbsoluteSize";
-import { RelativeSizeUnit } from "../../../models/baseUnit/RelativeSize";
+import { SLASH_HASH } from "../../constant/slashHash";
+import { IBaseStyle } from "../../models/IBaseStyle";
+import { AbsoluteSizeUnit } from "../../models/baseUnit/AbsoluteSize";
+import { RelativeSizeUnit } from "../../models/baseUnit/RelativeSize";
+import { SizeUnit } from "../../models/baseUnit/SizeUnit";
 
-export class Margin implements IMargin {
-    left?: MarginSize;
-    right?: MarginSize;
-    top?: MarginSize;
-    bottom?: MarginSize;
+export interface IPadding extends IBaseStyle {
+    left?: SizeUnit;
+    right?: SizeUnit;
+    top?: SizeUnit;
+    bottom?: SizeUnit;
+  
+    setPadding(value: string): this;
+    setLeft(value: string): this;
+    setRight(value: string): this;
+    setTop(value: string): this;
+    setBottom(value: string): this;
+  }
 
-    private setAllSides(size: MarginSize): void {
+  
+export class Padding implements IPadding  {
+    left?: SizeUnit;
+    right?: SizeUnit;
+    top?: SizeUnit;
+    bottom?: SizeUnit;
+
+    private setAllSides(size: SizeUnit): void {
         this.left = this.right = this.top = this.bottom = size;
     }
 
@@ -17,7 +32,7 @@ export class Margin implements IMargin {
         return this;
     }
 
-    private builderParseSize(size: string): MarginSize {
+    private builderParseSize(size: string): SizeUnit {
         const unitSize = []
 
         for (const absKey of Object.values(AbsoluteSizeUnit)) {
@@ -31,20 +46,19 @@ export class Margin implements IMargin {
         const regexPattern = new RegExp(`^(\\d+)(${conditionUnitSize})$`);
         const match = size.match(regexPattern);
         if (!match) {
-            throw new Error(`Invalid size format margin: ${conditionUnitSize}`);
+            throw new Error(`Invalid size format padding: ${conditionUnitSize}`);
         }
         const value = parseInt(match[1], 10);
-        const unit = match[2] as MarginSize["unit"];
+        const unit = match[2] as SizeUnit["unit"];
         return { value, unit };
     }
 
-
     value(): string {
-        return `${this.top?.value ?? "0"}${this.top?.unit} ${this.right?.value ?? "0"}${this.right?.unit} ${this.bottom?.value ?? "0"}${this.bottom?.unit} ${this.left?.value ?? "0"}${this.left?.unit}`;
+         return `${this.top?.value ?? "0"}${this.top?.unit} ${this.right?.value ?? "0"}${this.right?.unit} ${this.bottom?.value ?? "0"}${this.bottom?.unit} ${this.left?.value ?? "0"}${this.left?.unit}`;
     }
 
     toString(): string {
-        return `margin${SLASH_HASH}${this.value()}`;
+        return `padding${SLASH_HASH}`;
 
     }
     setLeft(value: string): this {
@@ -71,7 +85,7 @@ export class Margin implements IMargin {
         return this.build();
     }
 
-    setMargin(value: string): this {
+    setPadding(value: string): this {
         const values = value.split(" ");
         switch (values.length) {
             case 1:

@@ -1,9 +1,9 @@
 import { As, PropsOf } from "@chakra-ui/system";
-import { SerializedDividerSpec } from "@frontifyHub/common-type";
+import { SerializedSpec } from "@frontifyHub/common-type/src";
 import React from "react";
 
 export type Pure2cSSWrapperProps = {
-    pureStyles: SerializedDividerSpec;
+    pureStyles: SerializedSpec;
 };
 
 type MarkEncodingWrapperProps<T extends As> = Pure2cSSWrapperProps & PropsOf<T> & {
@@ -19,7 +19,7 @@ export function Pure2cSSWrapper<T extends As>(props: MarkEncodingWrapperProps<T>
         serializeStyles[key] = value ;
     });
     // temporary static set background color divider
-    serializeStyles.backgroundColor ="black"
+    serializeStyles.backgroundColor ="red"
     
     return <Component { ...rest } style={serializeStyles}/>
 }

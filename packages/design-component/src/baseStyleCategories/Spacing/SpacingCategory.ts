@@ -1,6 +1,13 @@
-import { ISpacingCategory } from "../../../models/baseStyleCategories/SpacingCategory/ISpacingCategory";
 import { Margin } from "./Margin";
 import { Padding } from "./Padding";
+
+export interface ISpacingCategory {
+    padding: Padding;
+    margin: Margin
+
+    setPadding(value: string): this;
+    setMargin(value: string): this;
+}
 
 export class SpacingCategory implements ISpacingCategory {
     padding: Padding;

@@ -1,7 +1,23 @@
-import { IWidth } from "../../../models";
-import { ISizingCategory } from "../../../models/baseStyleCategories/SizingCategory/ISizingCategory";
-import { Height } from "./Height";
-import { Width } from "./Width";
+import { Height, IHeight } from "./Height";
+import { IWidth, Width } from "./Width";
+
+export interface ISizingCategory{
+    height: IHeight;
+    maxHeight?: IHeight;
+    minHeight?: IHeight;
+    width: IWidth;
+    minWidth?: IWidth;
+    maxWidth?: IWidth;
+
+    setWidth(value: string): this;
+    setHeight(value: string): this;
+    
+    setMinWidth(value: string): this;
+    setMaxWidth(value: string): this;
+
+    setMinHeight(value: string): this;
+    setMaxHeight(value: string): this;
+}
 
 export class SizingCategory implements ISizingCategory {
     width: Width;

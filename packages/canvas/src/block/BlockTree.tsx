@@ -8,7 +8,7 @@ type BlockTreeProps = {
 
 export const BlockTree = ({ blockTree }: BlockTreeProps) => {
   return (
-    <div>
+    <React.Fragment>
       {blockTree.block.map((block) => {
         if (block.blockType === "tree") {
           return <BlockTree blockTree={block} />;
@@ -16,6 +16,6 @@ export const BlockTree = ({ blockTree }: BlockTreeProps) => {
         
         return <BlockItem block={block} />;
       })}
-    </div>
+    </React.Fragment>
   );
 };

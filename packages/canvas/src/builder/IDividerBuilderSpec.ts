@@ -1,6 +1,6 @@
 import { SerializedSpec } from "@frontifyHub/common-type";
-import { SpacingCategory, SizingCategory } from "@frontifyHub/design-component";
-import { ISizingCategory, ISpacingCategory } from "@frontifyHub/design-component/src/models";
+import { ISizingCategory, SizingCategory } from "@frontifyHub/design-component/src/baseStyleCategories/Sizing/SizingCategory";
+import { ISpacingCategory, SpacingCategory } from "@frontifyHub/design-component/src/baseStyleCategories/Spacing/SpacingCategory";
 
 export interface IDividerBuilderSpec {
     size?: ISizingCategory;
