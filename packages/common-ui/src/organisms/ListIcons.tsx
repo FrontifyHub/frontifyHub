@@ -3,55 +3,45 @@ import React from "react";
 import { TextIcon } from "../molecules";
 
 interface TextIconProps {
-  name: string;
   src: string;
   text: string;
 }
 
 const ICONS: TextIconProps[] = [
   {
-    name: "html",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/1024px-HTML5_Badge.svg.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg",
     text: "HTML",
   },
   {
-    name: "css",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/1024px-CSS3_logo.svg.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg",
     text: "CSS",
   },
   {
-    name: "material",
-    src: "https://static-00.iconduck.com/assets.00/material-ui-icon-512x406-fhnu85xg.png",
+    src: "https://svgmix.com/uploads/5b99f5-material-ui.svg",
     text: "Material UI",
   },
   {
-    name: "tailwind",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/320px-Tailwind_CSS_Logo.svg.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
     text: "TailwindCSS",
   },
   {
-    name: "typescript",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
     text: "Typescript",
   },
   {
-    name: "javascript",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
     text: "Javascript",
   },
   {
-    name: "nextjs",
     src: "https://www.svgrepo.com/show/354113/nextjs-icon.svg",
     text: "Nextjs",
   },
   {
-    name: "angular",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg",
     text: "Angular",
   },
   {
-    name: "react",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+    src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
     text: "ReactJS",
   },
 ];
@@ -59,8 +49,8 @@ const ICONS: TextIconProps[] = [
 export const ListIcons = ({ ...props }) => {
   return (
     <Flex gap="5rem" {...props}>
-      {ICONS.map((item) => (
-        <TextIcon key={item.name} src={item.src} text={item.text} />
+      {ICONS.map((item, key) => (
+        <TextIcon key={key} src={item.src} text={item.text} />
       ))}
     </Flex>
   );

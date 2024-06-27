@@ -1,3 +1,3 @@
 export * from "./ButtonGroup";
-export * from "./HomeTitle";
+export * from "./CombineGradient";
 export * from "./TextIcon";

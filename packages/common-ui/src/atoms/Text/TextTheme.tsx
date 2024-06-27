@@ -16,11 +16,11 @@ export const TextTheme = defineStyleConfig({
         bgClip: "text",
       };
     },
-    header1: {
+    headerLg: {
       fontWeight: 900,
       fontSize: "5xl",
     },
-    header2: {
+    headerMd: {
       fontWeight: 500,
       fontSize: "2xl",
       color: "gray",

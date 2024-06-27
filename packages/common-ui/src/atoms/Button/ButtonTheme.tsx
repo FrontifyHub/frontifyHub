@@ -43,6 +43,10 @@ export const ButtonTheme = defineStyleConfig({
         },
       };
     },
+    solidButton: {
+      background: "frontifyHub.violetFR",
+      color: "white",
+    },
   },
   // The default `size` or `variant` values
   defaultProps: {
