@@ -1,12 +1,12 @@
-import { Image } from "@chakra-ui/react";
+import { Image, ImageProps } from "@chakra-ui/react";
 import React from "react";
 
-interface ImageProps extends React.ComponentPropsWithoutRef<"img"> {
+interface CustomImageProps extends ImageProps {
   variant?: string;
 }
 
-export const CustomImage = (props: ImageProps) => {
-  const { variant, ...rest } = props;
+export const CustomImage: React.FC<CustomImageProps> = (props) => {
+  const { variant } = props;
   let filterStyles;
   switch (variant) {
     case "icon":
@@ -19,7 +19,5 @@ export const CustomImage = (props: ImageProps) => {
     default:
       filterStyles = {};
   }
-  return (
-    <Image {...rest} {...filterStyles} boxSize="5rem" objectFit="contain" />
-  );
+  return <Image {...filterStyles} src={props.src} alt={props.alt} {...props} />;
 };

@@ -7,14 +7,14 @@ type CombineGradientProps = {
   postfixText?: string;
 };
 
-export const CombineGradient = (props: CombineGradientProps) => {
+export const CombineGradient: React.FC<CombineGradientProps> = (props) => {
   return (
-    <>
+    <React.Fragment>
       {props.prefixText}&nbsp;
       <Text as="span" variant="textGradient">
         {props.textGradient}
       </Text>
       &nbsp;{props.postfixText}
-    </>
+    </React.Fragment>
   );
 };

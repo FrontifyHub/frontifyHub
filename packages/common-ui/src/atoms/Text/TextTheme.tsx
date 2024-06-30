@@ -4,7 +4,17 @@ export const TextTheme = defineStyleConfig({
   // Styles for the base style
   baseStyle: {},
   // Styles for the size variations
-  sizes: {},
+  sizes: {
+    xl: {
+      fontWeight: 500,
+      fontSize: "xl",
+    },
+    "2xl": { fontWeight: 500, fontSize: "2xl" },
+    "4xl": {
+      fontWeight: 900,
+      fontSize: "4xl",
+    },
+  },
   // Styles for the visual style variations
   variants: {
     textGradient: () => {
@@ -15,15 +25,6 @@ export const TextTheme = defineStyleConfig({
         bgGradient: `linear(to-l, ${fromColor}, ${toColor})`,
         bgClip: "text",
       };
-    },
-    headerLg: {
-      fontWeight: 900,
-      fontSize: "5xl",
-    },
-    headerMd: {
-      fontWeight: 500,
-      fontSize: "2xl",
-      color: "gray",
     },
   },
   // The default `size` or `variant` values

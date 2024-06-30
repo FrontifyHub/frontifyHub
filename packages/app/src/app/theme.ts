@@ -3,6 +3,7 @@
 import { extendTheme } from "@chakra-ui/react";
 import type { SystemStyleFunction } from "@chakra-ui/theme-tools";
 import {
+  BoxTheme,
   ButtonTheme,
   ImageTheme,
   TextTheme,
@@ -156,6 +157,7 @@ const frontifyHubTheme = extendTheme(
       Button: ButtonTheme,
       Image: ImageTheme,
       Text: TextTheme,
+      Box: BoxTheme,
     },
   },
   withProse({ baseStyle: baseEditorStyle })

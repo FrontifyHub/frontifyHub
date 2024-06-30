@@ -9,9 +9,9 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <Button onClick={toggleColorMode}>
+      {/* <Button onClick={toggleColorMode}>
         Toggle {colorMode === "light" ? "Dark" : "Light"}
-      </Button>
+      </Button> */}
       <HomePage />
     </main>
   );
