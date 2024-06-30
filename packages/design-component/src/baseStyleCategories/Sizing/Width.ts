@@ -30,11 +30,11 @@ export class Width implements IWidth {
   }
 
   setSize(value: string): this {
-    const matches = value.match(/^(\d+(?:\.\d+)?)([a-z%]+)$/);
+    const matches = value.match(/^(\d+)([a-zA-Z%]+)$/);
     if (!matches) {
       throw new Error(`Invalid size unit: ${value}`);
     }
-    const [num, unit] = matches;
+    const [_, num, unit] = matches;
 
     if (!isBaseUnit(unit)) {
       throw new Error(`Invalid unit: ${unit}`);

@@ -1,6 +1,7 @@
 import { SerializedSpec } from "@frontifyHub/common-type";
 import { ISizingCategory, SizingCategory } from "@frontifyHub/design-component/src/baseStyleCategories/Sizing/SizingCategory";
 import { ISpacingCategory, SpacingCategory } from "@frontifyHub/design-component/src/baseStyleCategories/Spacing/SpacingCategory";
+import { BLOCK_DIVIDER_INITIATION } from "../constant/initializeBlock";
 
 export interface IDividerBuilderSpec {
     size?: ISizingCategory;
@@ -37,12 +38,12 @@ export class DividerBuilderSpec implements IDividerBuilderSpec {
     }
 
     public fromJSON(): SerializedSpec {
+        const { height, margin, padding, width } = BLOCK_DIVIDER_INITIATION;
         return {
-            width: this.setWidth("1px"),
-            height: this.setHeight("300px"),
-            padding: this.setPadding("2px"),
-            margin: this.setMargin("5px")
+            width: this.setWidth(width),
+            height: this.setHeight(height),
+            padding: this.setPadding(padding),
+            margin: this.setMargin(margin)
         }
     }
-
 }

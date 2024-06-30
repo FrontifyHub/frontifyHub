@@ -15,6 +15,7 @@ export const BlockItem = ({ block }: BlockItemProps) => {
   const [dividerSpec, setDividerSpec] = React.useState<IDividerBuilderSpec>(
     new DividerBuilderSpec()
   );
+  console.log({dividerSpec})
   const type = "divider";
   switch (type) {
     case "divider":

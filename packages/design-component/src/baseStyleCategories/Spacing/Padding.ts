@@ -9,16 +9,15 @@ export interface IPadding extends IBaseStyle {
     right?: SizeUnit;
     top?: SizeUnit;
     bottom?: SizeUnit;
-  
+
     setPadding(value: string): this;
     setLeft(value: string): this;
     setRight(value: string): this;
     setTop(value: string): this;
     setBottom(value: string): this;
-  }
+}
 
-  
-export class Padding implements IPadding  {
+export class Padding implements IPadding {
     left?: SizeUnit;
     right?: SizeUnit;
     top?: SizeUnit;
@@ -54,11 +53,11 @@ export class Padding implements IPadding  {
     }
 
     value(): string {
-         return `${this.top?.value ?? "0"}${this.top?.unit} ${this.right?.value ?? "0"}${this.right?.unit} ${this.bottom?.value ?? "0"}${this.bottom?.unit} ${this.left?.value ?? "0"}${this.left?.unit}`;
+        return `${this.top?.value ?? "0"}${this.top?.unit} ${this.right?.value ?? "0"}${this.right?.unit} ${this.bottom?.value ?? "0"}${this.bottom?.unit} ${this.left?.value ?? "0"}${this.left?.unit}`;
     }
 
     toString(): string {
-        return `padding${SLASH_HASH}`;
+        return `padding${SLASH_HASH}${this.value()}`;
 
     }
     setLeft(value: string): this {
