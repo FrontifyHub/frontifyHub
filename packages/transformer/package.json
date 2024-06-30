@@ -1,9 +1,11 @@
 {
-  "name": "@frontifyHub/design-component",
+  "name": "@frontifyHub/transformer",
   "version": "0.1.0",
   "main": "src/",
   "dependencies": {
-    "typescript": "latest"
+    "typescript": "latest",
+    "@frontifyHub/design-component": "*",
+     "@frontifyHub/common-type": "*"
   },
   "devDependencies": {
     "typescript": "^5",
