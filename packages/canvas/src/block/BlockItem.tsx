@@ -1,6 +1,6 @@
 import React from "react";
 import { Pure2cSSWrapper } from "@frontifyHub/transformer";
-import { BoxInstance } from "@frontifyHub/design-component/src/tags/BoxInstance";
+import { BoxInstance } from "@frontifyHub/design-component/src/tags/BoxInstance.tsx";
 import {
   DividerBuilderSpec,
   IDividerBuilderSpec,
