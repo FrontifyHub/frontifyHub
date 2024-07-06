@@ -33,12 +33,24 @@ export const Header = () => {
         </Box>
   
           <VStack spacing={10} alignItems="center" width="full">
-            <Button as={Link} href="#components" variant="link" colorScheme="whiteAlpha">
+            {/* <Button as={Link} href="#components" variant="link" colorScheme="whiteAlpha">
                 <VStack spacing={5}>
                     <Image src={ComponentIcon} alt="Global" width={20} height={20} />
                     <Text fontSize="14">Components</Text>
                 </VStack>
-            </Button>
+            </Button> */}
+            <Box
+                        as={Link}
+                        href="#components"
+                        _hover={{ boxShadow: "md", textDecoration: "none" }}
+                        w="full"
+                        textAlign="center"
+                    >
+                        <VStack spacing={5}>
+                            <Image src={ComponentIcon} alt="Components" width={20} height={20} />
+                            <Text fontSize="14">Components</Text>
+                        </VStack>
+            </Box>
             <Button as={Link} href="#templates" variant="link" colorScheme="whiteAlpha">
                 <VStack spacing={5}>
                     <Image src={TemplateIcon} alt="Global" width={20} height={20} />
