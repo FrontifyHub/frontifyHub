@@ -1,6 +1,7 @@
 import { useLocalization } from "@frontifyHub/common/localization";
 import { CombineGradient } from "@frontifyHub/common-ui/molecules/CombineGradient";
 import { Box, VStack, Link, Button, Text, Center } from "@chakra-ui/react";
+import { ColorModeScript, useColorMode } from "@chakra-ui/react";
 import Image from 'next/image';
 import ComponentIcon from "../../../public/Component.svg";
 import TemplateIcon from "../../../public/CarbonTemplate.svg";
@@ -10,6 +11,8 @@ import GlobalIcon from "../../../public/Solar Global Linear.svg";
 import ThemeColorIcon from "../../../public/FrontifyHub Sun.svg";
 
 export const Header = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
     return (
       <Box
         as="nav"
@@ -80,8 +83,9 @@ export const Header = () => {
             <Button variant="ghost" colorScheme="whiteAlpha">
               <Image src={LanguageIcon} alt="Light" width={24} height={24} />
             </Button>
-            <Button variant="ghost" colorScheme="whiteAlpha">
+            <Button onClick={toggleColorMode} variant="ghost" colorScheme="whiteAlpha">
               <Image src={ThemeColorIcon} alt="Language" width={24} height={24} />
+                Toggle {colorMode === "light" ? "Dark" : "Light"}
             </Button>
           </VStack>
         </VStack>
