@@ -13,7 +13,6 @@
     "@frontifyHub/common-ui": "*",
     "@frontifyHub/common": "*",
     "@frontifyHub/common-type": "*",
-    "@frontifyHub/canvas": "*",
     "react": "^18",
     "react-dom": "^18",
     "next": "14.2.3"
