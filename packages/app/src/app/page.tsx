@@ -1,20 +1,11 @@
 "use client";
-import {
-  Link,
-  Button,
-  ColorModeScript,
-  useColorMode,
-  Box,
-} from "@chakra-ui/react";
 import styles from "./page.module.css";
-import { Language, useLocalization } from "@frontifyHub/common/localization";
-import frontifyHubTheme from "./theme";
-import { Canvas } from "../../../canvas/src/Canvas";
+import { TreeBlocks } from "@frontifyHub/canvas/TreeBlocks";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Canvas />
+      <TreeBlocks />
     </main>
   );
 }
