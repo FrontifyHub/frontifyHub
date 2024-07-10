@@ -1,4 +1,10 @@
-import { Box, Menu, MenuButton, MenuList } from "@chakra-ui/react";
+import {
+  Box,
+  Menu,
+  MenuButton,
+  MenuList,
+  useOutsideClick,
+} from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import { useBlockSelecting } from "../context/BlockSelectingProvider";
 import styled from "@emotion/styled";
@@ -24,22 +30,33 @@ const BlockWrapperStyled = styled(Box)<{ isSelected: boolean }>`
 
 export const SelectedBlockWrapper = React.memo(
   ({ blockView, block, onChangeStyleBlock }: SelectedBlockWrapperProps) => {
-    const { pathSelectedBlock, setPathSelectedBlock } = useBlockSelecting();
+    const { pathSelectedBlock, setPathSelectedBlock, onResetSelectedBlock } =
+      useBlockSelecting();
     const isSelectedBlock = pathSelectedBlock === block.path;
+    const ref = React.useRef<HTMLDivElement>(null);
+    useOutsideClick({
+      ref: ref,
+      handler: () => onResetSelectedBlock(),
+    });
     return (
-      <Menu isOpen={isSelectedBlock} placement="bottom-end">
-        <BlockWrapperStyled
-          isSelected={isSelectedBlock}
-          onClick={() => setPathSelectedBlock(block.path!)}
-        >
-          {blockView}
-        </BlockWrapperStyled>
-        <MenuButton />
+      <Box ref={ref}>
+        <Menu isOpen={isSelectedBlock} placement="bottom-end">
+          <BlockWrapperStyled
+            isSelected={isSelectedBlock}
+            onClick={() => setPathSelectedBlock(block.path!)}
+          >
+            {blockView}
+          </BlockWrapperStyled>
+          <MenuButton />
 
-        <MenuList>
-          <BlockToolbox block={block} onChangeStyleBlock={onChangeStyleBlock} />
-        </MenuList>
-      </Menu>
+          <MenuList>
+            <BlockToolbox
+              block={block}
+              onChangeStyleBlock={onChangeStyleBlock}
+            />
+          </MenuList>
+        </Menu>
+      </Box>
     );
   }
 );
