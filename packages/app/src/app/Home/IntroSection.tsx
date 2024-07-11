@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, Button, Flex, Image, LightMode, Text } from "@chakra-ui/react";
-import { CombineGradient } from "@frontifyHub/common-ui/molecules";
 import { useLocalization } from "@frontifyHub/common/localization";
 import React from "react";
 import { ListIcons } from "@frontifyHub/common-ui/organisms";
@@ -54,14 +53,8 @@ export const IntroSection: React.FC = () => {
   const { t } = useLocalization();
 
   return (
-    <Flex
-      w="100%"
-      h="100vh"
-      direction="column"
-      align="center"
-      scrollSnapAlign="center"
-    >
-      <Flex w="100%" justify="space-between" gap="2">
+    <Flex w="100%" direction="column" align="center">
+      <Flex w="100%" justify="space-between">
         <Button variant="borderGradient">
           {t("home_section1-releaseButton")}
         </Button>
@@ -71,23 +64,28 @@ export const IntroSection: React.FC = () => {
           </Button>
         </LightMode>
       </Flex>
-      <Image src={`logo.svg`} alt="logi" boxSize="10rem" />
-      <Text size="4xl">
-        <CombineGradient textGradient="FrontifyHub" prefixText="The" />
-      </Text>
-      <Text size="4xl">{t("home_section1-header1")}</Text>
-      <Text size="2xl" margin="2rem 0" color="gray">
+
+      <Image src={`logo.svg`} alt="logo" boxSize="10rem" />
+
+      <Flex direction="column" align="center">
+        <Text size="4xl">
+          The&nbsp;
+          <Text variant="textGradient" as="span">
+            FrontifyHub
+          </Text>
+        </Text>
+        <Text size="4xl">{t("home_section1-header1")}</Text>
+      </Flex>
+
+      <Text size="xl" margin="2rem 0" color="gray">
         {t("home_section1-header2")}
       </Text>
       <Text variant="textGradient" size="xl">
         {t("home_section1-convert")}
       </Text>
-      <Box margin="3rem">
+      <Box margin="2rem">
         <ListIcons columnGap="3rem" icons={ICONS} directionTextIcon="column" />
       </Box>
-      <Flex>
-        <Image src="down.svg" />
-      </Flex>
     </Flex>
   );
 };

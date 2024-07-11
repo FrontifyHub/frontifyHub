@@ -31,6 +31,8 @@
   "dependencies": {
     "@chakra-ui/next-js": "^2.2.0",
     "@chakra-ui/react": "^2.8.2",
-    "@nikolovlazar/chakra-ui-prose": "^1.2.1"
+    "@nikolovlazar/chakra-ui-prose": "^1.2.1",
+    "lodash": "^4.17.21",
+    "styled-components": "^6.1.11"
   }
 }

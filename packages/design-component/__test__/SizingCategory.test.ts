@@ -1,8 +1,8 @@
-import { SizeCategory } from '../src/view-models/baseStyleCategories/SizingCategory/SizingCategory'
 import { SLASH_HASH } from '../src/constant/slashHash';
+import { SizingCategory } from "../src/baseStyleCategories/Sizing/SizingCategory";
 
 describe('Size Category Correctly', () => {
-    let sizeCategory: SizeCategory = new SizeCategory;
+    let sizeCategory: SizingCategory = new SizingCategory;
 
     test("should set width", () => {
         let valueWidth = "100px";

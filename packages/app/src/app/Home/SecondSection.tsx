@@ -1,4 +1,4 @@
-import { Flex, Image, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, List, ListItem, Text } from "@chakra-ui/react";
 import { InformationBox } from "@frontifyHub/common-ui/organisms";
 import { useLocalization } from "@frontifyHub/common/localization";
 
@@ -26,14 +26,8 @@ export const SecondSection: React.FC = () => {
   ];
 
   return (
-    <Flex
-      w="100%"
-      h="100vh"
-      direction="column"
-      align="center"
-      scrollSnapAlign="center"
-    >
-      <Flex>
+    <Flex w="100%" direction="column">
+      <Flex align="center" justify="center" gap={4}>
         <Flex direction="column">
           <Text variant="textGradient">{t("home_section2-products")}</Text>
           <Text size="4xl">{t("home_section2-header1")}</Text>
@@ -55,10 +49,11 @@ export const SecondSection: React.FC = () => {
             ))}
           </List>
         </Flex>
-      </Flex>
-      <Flex>
-        <Image src="up.svg" />
-        <Image src="down.svg" />
+        <Box w="50%" h="100%">
+          <video autoPlay loop muted>
+            <source src="temp_video.mp4" type="video/mp4" />
+          </video>
+        </Box>
       </Flex>
     </Flex>
   );

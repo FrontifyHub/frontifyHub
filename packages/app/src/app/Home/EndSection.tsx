@@ -11,7 +11,6 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { CombineGradient } from "@frontifyHub/common-ui/molecules";
 import { useLocalization } from "@frontifyHub/common/localization";
 
 type ContributorProps = {
@@ -70,24 +69,20 @@ export const EndSection: React.FC = () => {
   const { t } = useLocalization();
 
   return (
-    <Flex
-      w="100%"
-      h="100vh"
-      direction="column"
-      align="center"
-      scrollSnapAlign="center"
-    >
+    <Flex w="100%" direction="column" align="center">
       <Text size="4xl">
-        <CombineGradient
-          textGradient="FrontifyHub"
-          prefixText="The"
-          postfixText="contributor"
-        />
+        The&nbsp;
+        <Text variant="textGradient" as="span">
+          FrontifyHub
+        </Text>
+        &nbsp;contributor
       </Text>
+
       <Text size="xl" color="gray">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. 
       </Text>
+
       <Stack direction="row" margin="2rem">
         {CONTRIBUTORS.map((item, key) => (
           <Link href={item.src} key={key} margin="0 1rem">
@@ -95,6 +90,7 @@ export const EndSection: React.FC = () => {
           </Link>
         ))}
       </Stack>
+
       <Text size="4xl">Communication</Text>
 
       <SimpleGrid
@@ -105,7 +101,7 @@ export const EndSection: React.FC = () => {
         justifyContent="center"
       >
         {COMMUNICATIONS.map((item, key) => (
-          <Card key={key} background={item.color}>
+          <Card key={key} background={item.color} color="white">
             <CardHeader padding="1.25rem 1.25rem 0">
               <Flex gap={3} align="center">
                 <Image src={item.src} boxSize="2rem" />
@@ -120,10 +116,6 @@ export const EndSection: React.FC = () => {
           </Card>
         ))}
       </SimpleGrid>
-
-      <Flex>
-        <Image src="up.svg" />
-      </Flex>
     </Flex>
   );
 };

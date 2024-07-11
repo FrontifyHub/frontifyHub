@@ -1,4 +1,4 @@
-import { SpacingCategory } from "../src"
+import { SpacingCategory } from "../src/baseStyleCategories/Spacing/SpacingCategory";
 import { SLASH_HASH } from "../src/constant/slashHash";
 
 describe('spacing categir', () => {

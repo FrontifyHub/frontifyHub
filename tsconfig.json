@@ -5,7 +5,10 @@
       "@frontifyHub/design-component/*": ["packages/design-component/src/*"],
       "@frontifyHub/common-ui/*": ["packages/common-ui/src/*"],
       "@frontifyHub/common/*": ["packages/common/src/*"],
-      "@frontifyHub/common-type/*": ["packages/common-type/src/*"]
+      "@frontifyHub/common-type/*": ["packages/common-type/src/*"],
+      "@frontifyHub/canvas/*": ["packages/canvas/src/*"],
+      "@frontifyHub/transformer/*": ["packages/transformer/src/*"],
+
     }
   },
   "include": ["packages/*/src/*"]
