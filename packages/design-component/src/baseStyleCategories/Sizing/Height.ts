@@ -11,30 +11,13 @@ export interface IHeight extends IBaseStyle {
 }
 
 export class Height implements IHeight {
-    height?: SizeUnit;
+    _height?: SizeUnit;
     type?: 'height' | 'min-height' | 'max-height' = 'height';
 
     constructor(type?: 'height' | 'min-height' | 'max-height') {
         if (type) {
             this.type = type;
         }
-    }
-    setSize(value: string): this {
-        const regex = /(\d+(?:\.\d+)?)(px|em|rem|vh|vw|%)/;
-        const match = value.match(regex);
-        if (match) {
-            const sizeValue = parseFloat(match[1]);
-            const unit = match[2];
-
-            if (!isBaseUnit(unit)) {
-                throw new Error(`Invalid unit: ${unit}`);
-            }
-            this.height = {
-                value: sizeValue,
-                unit: unit as AbsoluteSizeUnit | RelativeSizeUnit
-            }
-        }
-        return this;
     }
 
     value(): string {
@@ -44,5 +27,11 @@ export class Height implements IHeight {
 
     toString(): string {
         return `${this.type}${SLASH_HASH}${this.value()}`
+    }
+    public get height(): SizeUnit | undefined {
+        return this._height;
+    }
+    public set height(value: SizeUnit) {
+        this._height = value
     }
 }
