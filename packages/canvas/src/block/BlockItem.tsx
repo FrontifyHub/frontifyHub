@@ -25,7 +25,7 @@ export const BlockItem = ({ block }: BlockItemProps) => {
         return (
           <Pure2cSSWrapper
             as={BoxInstance}
-            pureStyles={dividerSpec.fromJSON()}
+            pureStyles={dividerSpec.fromJSON().exportConfigure()}
           />
         );
       default:
