@@ -4,14 +4,14 @@ import { AbsoluteSizeUnit } from "../../models/baseUnit/AbsoluteSize";
 import { RelativeSizeUnit } from "../../models/baseUnit/RelativeSize";
 import { SizeUnit } from "../../models/baseUnit/SizeUnit";
 
-export interface IFontSize extends IBaseStyle {
-  fontSize?: SizeUnit;
+export interface ILetterSpacing extends IBaseStyle {
+  letterSpacing?: SizeUnit;
 
-  setFontSize(value: string): this;
+  setLetterSpacing(value: string): this;
 }
 
-export class FontSize implements IFontSize {
-  fontSize?: SizeUnit;
+export class LetterSpacing implements ILetterSpacing {
+  letterSpacing?: SizeUnit;
 
   private build() {
     return this;
@@ -31,7 +31,9 @@ export class FontSize implements IFontSize {
     const regexPattern = new RegExp(`^(\\d+)(${conditionUnitSize})$`);
     const match = size.match(regexPattern);
     if (!match) {
-      throw new Error(`Invalid size format font size: ${conditionUnitSize}`);
+      throw new Error(
+        `Invalid size format letter spacing: ${conditionUnitSize}`
+      );
     }
     const value = parseInt(match[1], 10);
     const unit = match[2] as SizeUnit["unit"];
@@ -39,15 +41,15 @@ export class FontSize implements IFontSize {
   }
 
   value(): string {
-    return `${this.fontSize?.value ?? "0"}${this.fontSize?.unit}`;
+    return `${this.letterSpacing?.value ?? "0"}${this.letterSpacing?.unit}`;
   }
 
   toString(): string {
-    return `font-size${SLASH_HASH}${this.value()}`;
+    return `letter-spacing${SLASH_HASH}${this.value()}`;
   }
-  setFontSize(value: string): this {
-    const newFontSize = this.builderParseSize(value);
-    this.fontSize = newFontSize;
+  setLetterSpacing(value: string): this {
+    const newLetterSpacing = this.builderParseSize(value);
+    this.letterSpacing = newLetterSpacing;
     return this.build();
   }
 }
