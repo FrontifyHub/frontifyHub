@@ -34,8 +34,8 @@ export interface IBlockBuilderSpec {
     size?: ISizingCategory;
     spacing?: ISpacingCategory;
     fromJSON: () => IBlockBuilderSpec;
-    changeStyle: (value: BlockConfigure) => IBlockBuilderSpec
     exportConfigure: () => BlockConfigure
+    loadConfigure: (configure: BlockConfigure) => IBlockBuilderSpec
 }
 
 export type IBlock = IBlockItem | IBlockSection;

@@ -12,11 +12,11 @@ type BlockItemProps = {
 export const BlockItem = ({ block }: BlockItemProps) => {
   // hard code
   const [dividerSpec, setDividerSpec] = React.useState<IBlockBuilderSpec>(
-    new DividerBuilderSpec().changeStyle(block)
+    new DividerBuilderSpec().loadConfigure(block)
   );
   
   React.useEffect(() => {
-    setDividerSpec(new DividerBuilderSpec().changeStyle(block));
+    setDividerSpec(new DividerBuilderSpec().loadConfigure(block));
   }, [block]);
 
    const item = React.useMemo(() => {

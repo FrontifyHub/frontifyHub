@@ -7,31 +7,34 @@ import {
   SpacingCategory,
 } from "@frontifyHub/design-component/src/baseStyleCategories/Spacing/SpacingCategory";
 import { BlockConfigure, IBlockBuilderSpec } from "../block/IBlock";
-import { onChangeSelfStyle } from "../utils/onChangeSelfStyle";
 
 export class BlockBuilderSpec implements IBlockBuilderSpec {
-  size!: ISizingCategory;
-  spacing!: ISpacingCategory;
+  size: ISizingCategory ;
+  spacing: ISpacingCategory;
 
   constructor() {
     this.size = new SizingCategory();
     this.spacing = new SpacingCategory();
   }
 
-  public set width(value: string) {
-    this.size.setWidth(value);
+  public setWidth(value?: string) {
+    this.size.setWidth(value ?? "0px");
+    return this;
   }
 
-  public set height(value: string) {
-    this.size?.setHeight(value);
+  public setHeight(value?: string) {
+    this.size.setHeight(value ?? "0px");
+    return this;
   }
 
-  public set padding(value: string) {
-    this.spacing.setPadding(value);
+  public setPadding(value?: string) {
+    this.spacing.setPadding(value ?? "0px");
+    return this;
   }
 
-  public set margin(value: string) {
-    this.spacing.setMargin(value);
+  public setMargin(value?: string) {
+    this.spacing.setMargin(value ?? "0px");
+    return this;
   }
 
   public exportConfigure(): BlockConfigure {
@@ -53,16 +56,16 @@ export class BlockBuilderSpec implements IBlockBuilderSpec {
     };
   }
 
-  public loadConfigure(configure: BlockConfigure): BlockBuilderSpec {
-    return new BlockBuilderSpec().changeStyle(configure);
+  public loadConfigure(configure: BlockConfigure) {
+    const { height, width, margin, padding } = configure;
+    return new BlockBuilderSpec()
+      .setHeight(height)
+      .setWidth(width)
+      .setMargin(margin)
+      .setPadding(padding);
   }
 
-  fromJSON(): IBlockBuilderSpec {
-    return this.loadConfigure(this.exportConfigure());
-  }
-
-  public changeStyle(style: BlockConfigure) {
-    onChangeSelfStyle(this, style);
+  public fromJSON(): IBlockBuilderSpec {
     return this.loadConfigure(this.exportConfigure());
   }
 }
