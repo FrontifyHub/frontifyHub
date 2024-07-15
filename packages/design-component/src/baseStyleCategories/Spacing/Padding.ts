@@ -32,14 +32,10 @@ export class Padding implements IPadding {
     }
 
     private builderParseSize(size: string): SizeUnit {
-        const unitSize = []
-
-        for (const absKey of Object.values(AbsoluteSizeUnit)) {
-            unitSize.push(absKey)
-        }
-        for (const relativeKey of Object.values(RelativeSizeUnit)) {
-            unitSize.push(relativeKey)
-        }
+        const unitSize = [
+            ...Object.values(AbsoluteSizeUnit),
+            ...Object.values(RelativeSizeUnit)
+        ];    
 
         const conditionUnitSize = unitSize.join('|');
         const regexPattern = new RegExp(`^(\\d+)(${conditionUnitSize})$`);

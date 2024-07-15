@@ -1,9 +1,9 @@
 import { As, PropsOf } from "@chakra-ui/system";
-import { SerializedSpec } from "@frontifyHub/common-type/src";
 import React from "react";
+import { BlockConfigure } from "@frontifyHub/canvas/src/block/IBlock"
 
 export type Pure2cSSWrapperProps = {
-    pureStyles: SerializedSpec;
+    pureStyles: BlockConfigure;
 };
 
 type MarkEncodingWrapperProps<T extends As> = Pure2cSSWrapperProps & PropsOf<T> & {

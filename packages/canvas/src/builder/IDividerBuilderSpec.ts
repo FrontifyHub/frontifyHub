@@ -1,19 +1,19 @@
-import { SerializedSpec } from "@frontifyHub/common-type";
 import { BLOCK_DIVIDER_INITIATION } from "../constant/initializeBlock";
 import { BlockBuilderSpec } from "../block/BlockBuilderSpec";
+import { IBlockBuilderSpec } from "../block/IBlock";
 
 export class DividerBuilderSpec extends BlockBuilderSpec {
     constructor(){
         super();
     }
 
-    public fromJSON(): SerializedSpec {
+    override fromJSON(): IBlockBuilderSpec {
         const { height, margin, padding, width } = BLOCK_DIVIDER_INITIATION;
-        return {
-            width: this.size.width.value() ?? this.setWidth(this.width ?? width),
-            height: this.size.height.value() ?? this.setHeight(this.height ?? height),
-            padding: this.spacing.padding.value() ?? this.setPadding(this.padding ?? padding),
-            margin: this.spacing.margin.value() ?? this.setMargin(this.margin ?? margin)
-        }
-    } 
+        return this.loadConfigure({
+            width: this.size.width.value() ?? width,
+            height: this.size.height.value() ?? height,
+            padding: this.spacing.padding.value() ?? padding,
+            margin: this.spacing.margin.value() ?? margin,
+        });
+    }
 }
