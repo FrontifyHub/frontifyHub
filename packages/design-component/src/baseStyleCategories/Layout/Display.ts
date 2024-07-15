@@ -1,6 +1,6 @@
 import { IBaseStyle } from "../../models/IBaseStyle";
 
-export type DisplayValues = 'block' |
+export type DisplayAttributes = 'block' |
     'inline-block' |
     'inline' |
     'flex' |
@@ -23,15 +23,13 @@ export type DisplayValues = 'block' |
     'none';
 
 export interface IDisplay extends IBaseStyle {
-    display: DisplayValues
-
+    display: DisplayAttributes
 }
 
 export class Display implements IDisplay {
-    private _display!: DisplayValues;
+    private _display!: DisplayAttributes;
 
     constructor(){
-
     }
     
     toString(): string {
@@ -41,10 +39,10 @@ export class Display implements IDisplay {
         throw new Error("Method not implemented.");
     }
 
-    public get display(): DisplayValues {
+    public get display(): DisplayAttributes {
         return this._display;
     }
-    public set display(value: DisplayValues) {
+    public set display(value: DisplayAttributes) {
         this._display = value
     }
 }
