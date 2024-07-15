@@ -1,8 +1,9 @@
 import React from "react";
 import { BlockItem } from "./BlockItem";
-import { BlockConfigure, IBlockSection } from "./IBlock";
+import { IBlockSection } from "./IBlock";
 import { SelectedBlockWrapper } from "../components/SelectedBlockWrapper";
 import { Box } from "@chakra-ui/react";
+import { BlockConfigure } from "@frontifyHub/common-type";
 
 type BlockSectionProps = {
   block: IBlockSection;

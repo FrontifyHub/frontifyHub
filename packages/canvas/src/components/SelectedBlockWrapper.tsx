@@ -8,8 +8,9 @@ import {
 import React, { ReactNode } from "react";
 import { useBlockSelecting } from "../context/BlockSelectingProvider";
 import styled from "@emotion/styled";
-import { BlockConfigure, IBlock } from "../block/IBlock";
+import { IBlock } from "../block/IBlock";
 import { BlockToolbox } from "./BlockToolbox";
+import { BlockConfigure } from "@frontifyHub/common-type";
 
 type SelectedBlockWrapperProps = {
   blockView: ReactNode;
