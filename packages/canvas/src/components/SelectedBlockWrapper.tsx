@@ -8,14 +8,13 @@ import {
 import React, { ReactNode } from "react";
 import { useBlockSelecting } from "../context/BlockSelectingProvider";
 import styled from "@emotion/styled";
-import { IBlock } from "../block/IBlock";
+import { BlockConfigure, IBlock } from "../block/IBlock";
 import { BlockToolbox } from "./BlockToolbox";
-import { SerializedSpec } from "@frontifyHub/common-type";
 
 type SelectedBlockWrapperProps = {
   blockView: ReactNode;
   block: IBlock;
-  onChangeStyleBlock: (styleBlock: SerializedSpec, pathBlock: string) => void;
+  onChangeStyleBlock: (styleBlock: BlockConfigure, pathBlock: string) => void;
 };
 
 const BlockWrapperStyled = styled(Box)<{ isSelected: boolean }>`

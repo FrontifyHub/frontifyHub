@@ -1,14 +1,12 @@
 import React from "react";
 import { BlockItem } from "./BlockItem";
-import { IBlockSection } from "./IBlock";
-import { useBlockSelecting } from "../context/BlockSelectingProvider";
+import { BlockConfigure, IBlockSection } from "./IBlock";
 import { SelectedBlockWrapper } from "../components/SelectedBlockWrapper";
 import { Box } from "@chakra-ui/react";
-import { SerializedSpec } from "@frontifyHub/common-type";
 
 type BlockSectionProps = {
   block: IBlockSection;
-  onChangeStyleBlock: (styleBlock: SerializedSpec, pathBlock: string) => void;
+  onChangeStyleBlock: (styleBlock: BlockConfigure, pathBlock: string) => void;
 };
 
 export const BlockSection = ({
