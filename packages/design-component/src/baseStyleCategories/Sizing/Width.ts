@@ -1,9 +1,6 @@
 import { SLASH_HASH } from "../../constant/slashHash";
 import { IBaseStyle } from "../../models/IBaseStyle";
-import { AbsoluteSizeUnit } from "../../models/baseUnit/AbsoluteSize";
-import { RelativeSizeUnit } from "../../models/baseUnit/RelativeSize";
 import { SizeUnit } from "../../models/baseUnit/SizeUnit";
-import { isBaseUnit } from "../../utils/baseUnit";
 
 export interface IWidth extends IBaseStyle {
   width?: SizeUnit;
