@@ -1,7 +1,8 @@
+import { stringValueToSizeUnit } from "../../models/baseUnit/SizeUnit";
 import { Height, IHeight } from "./Height";
 import { IWidth, Width } from "./Width";
 
-export interface ISizingCategory{
+export interface ISizingCategory {
     height: IHeight;
     maxHeight?: IHeight;
     minHeight?: IHeight;
@@ -9,14 +10,12 @@ export interface ISizingCategory{
     minWidth?: IWidth;
     maxWidth?: IWidth;
 
-    setWidth(value: string): this;
-    setHeight(value: string): this;
-    
-    setMinWidth(value: string): this;
-    setMaxWidth(value: string): this;
-
-    setMinHeight(value: string): this;
-    setMaxHeight(value: string): this;
+    setWidth: (value: string) => this
+    setHeight: (value: string) => this
+    setMinWidth: (value: string) => this
+    setMaxWidth: (value: string) => this
+    setMinHeight: (value: string) => this
+    setMaxHeight: (value: string) => this
 }
 
 export class SizingCategory implements ISizingCategory {
@@ -33,11 +32,11 @@ export class SizingCategory implements ISizingCategory {
     }
 
     setWidth(value: string): this {
-        this.width.setSize(value);
+        this.width.width = stringValueToSizeUnit(value);
         return this;
     }
     setHeight(value: string): this {
-        this.height.setSize(value);
+        this.height.height = stringValueToSizeUnit(value);
         return this;
     }
 
@@ -45,14 +44,14 @@ export class SizingCategory implements ISizingCategory {
         if (!this.minWidth) {
             this.minWidth = new Width('min-width');
         }
-        this.minWidth.setSize(value);
+        this.minWidth.width = stringValueToSizeUnit(value);
         return this;
     }
     setMaxWidth(value: string): this {
         if (!this.maxWidth) {
             this.maxWidth = new Width('max-width');
         }
-        this.maxWidth.setSize(value);
+        this.maxWidth.width = stringValueToSizeUnit(value);
         return this;
     }
 
@@ -60,14 +59,14 @@ export class SizingCategory implements ISizingCategory {
         if (!this.minHeight) {
             this.minHeight = new Height('min-height');
         }
-        this.minHeight.setSize(value);
+        this.minHeight.height = stringValueToSizeUnit(value);
         return this;
     }
     setMaxHeight(value: string): this {
         if (!this.maxHeight) {
             this.maxHeight = new Height('max-height');
         }
-        this.maxHeight.setSize(value);
+        this.maxHeight.height = stringValueToSizeUnit(value);
         return this;
     }
 

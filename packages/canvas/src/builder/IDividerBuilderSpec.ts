@@ -3,7 +3,7 @@ import { BlockBuilderSpec } from "../block/BlockBuilderSpec";
 import { IBlockBuilderSpec } from "../block/IBlock";
 
 export class DividerBuilderSpec extends BlockBuilderSpec {
-    constructor(){
+    constructor() {
         super();
     }
 

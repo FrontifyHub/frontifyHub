@@ -7,11 +7,10 @@ import { isBaseUnit } from "../../utils/baseUnit";
 
 export interface IWidth extends IBaseStyle {
   width?: SizeUnit;
-  type?: 'width' | 'min-width' | 'max-width'
 }
 
 export class Width implements IWidth {
-  width?: SizeUnit;
+  _width?: SizeUnit;
   type?: 'width' | 'min-width' | 'max-width' = 'width';
 
   constructor(type?: 'width' | 'min-width' | 'max-width') {
@@ -21,29 +20,18 @@ export class Width implements IWidth {
   }
 
   value(): string {
-    if (!this.width) return ''
-    return `${this.width.value}${this.width.unit}`;
+    if (!this._width) return ''
+    return `${this._width.value}${this._width.unit}`;
   }
 
   toString(): string {
     return `${this.type}${SLASH_HASH}${this.value()}`
   }
 
-  setSize(value: string): this {
-    const matches = value.match(/^(\d+)([a-zA-Z%]+)$/);
-    if (!matches) {
-      throw new Error(`Invalid size unit: ${value}`);
-    }
-    const [_, num, unit] = matches;
-
-    if (!isBaseUnit(unit)) {
-      throw new Error(`Invalid unit: ${unit}`);
-    }
-    this.width = {
-      value: parseFloat(num),
-      unit: unit as AbsoluteSizeUnit | RelativeSizeUnit,
-    };
-    return this;
+  public get width(): SizeUnit | undefined{
+    return this._width;
   }
-
+  public set width(value: SizeUnit) {
+    this._width = value
+  }
 }

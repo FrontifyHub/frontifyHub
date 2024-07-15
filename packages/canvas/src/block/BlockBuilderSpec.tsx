@@ -17,7 +17,6 @@ export class BlockBuilderSpec implements IBlockBuilderSpec {
     this.spacing = new SpacingCategory();
   }
 
-
   public setWidth(value?: string) {
     this.size.setWidth(value ?? "0px");
     return this;
