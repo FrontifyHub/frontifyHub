@@ -3,6 +3,7 @@ import { IBaseStyle } from "../../models/IBaseStyle";
 import { AbsoluteSizeUnit } from "../../models/baseUnit/AbsoluteSize";
 import { RelativeSizeUnit } from "../../models/baseUnit/RelativeSize";
 import { SizeUnit } from "../../models/baseUnit/SizeUnit";
+import { BaseStyle } from "../base";
 
 export interface IMargin extends IBaseStyle {
     left?: SizeUnit;
@@ -17,7 +18,7 @@ export interface IMargin extends IBaseStyle {
     setBottom(value: string): this;
 }
 
-export class Margin implements IMargin {
+export class Margin extends BaseStyle implements IMargin {
     left?: SizeUnit;
     right?: SizeUnit;
     top?: SizeUnit;
@@ -52,15 +53,23 @@ export class Margin implements IMargin {
         return { value, unit };
     }
 
+    stylePattern(): Record<string, string>{
+        return {
+            top:`${this.top?.value ?? "0"}${this.top?.unit}`,
+            right: `${this.right?.value ?? "0"}${this.right?.unit}`,
+            bottom: `${this.bottom?.value ?? "0"}${this.bottom?.unit}`,
+            left: `${this.left?.value ?? "0"}${this.left?.unit}`
+        }
+    }
 
     value(): string {
-        return `${this.top?.value ?? "0"}${this.top?.unit} ${this.right?.value ?? "0"}${this.right?.unit} ${this.bottom?.value ?? "0"}${this.bottom?.unit} ${this.left?.value ?? "0"}${this.left?.unit}`;
+        return super.value(this.stylePattern())
     }
 
     toString(): string {
-        return `margin${SLASH_HASH}${this.value()}`;
-
+        return super.toString('padding', this.stylePattern())
     }
+    
     setLeft(value: string): this {
         const newPaddingLeft = this.builderParseSize(value);
         this.left = newPaddingLeft;
