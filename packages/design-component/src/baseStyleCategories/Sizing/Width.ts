@@ -19,7 +19,7 @@ export class Width extends BaseStyle implements IWidth {
   }
 
   stylePattern(): Record<string, string> {
-    if (!this.width) throw new Error('height undifined')
+    if (!this.width) throw new Error('width undifined')
     return {
       width: `${this.width.value}${this.width.unit}`
     }

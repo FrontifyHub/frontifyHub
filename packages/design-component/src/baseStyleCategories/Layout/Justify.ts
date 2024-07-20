@@ -1,4 +1,5 @@
 import { IBaseStyle } from "../../models/IBaseStyle";
+import { BaseStyle } from "../base";
 
 export enum EJustifyType {
     JUSTIFY_CONTENT = 'justifyContent',
@@ -29,19 +30,28 @@ export interface IJustify extends IBaseStyle {
     justify: JustifyStyle
 }
 
-export class Justify implements IJustify {
+export class Justify extends BaseStyle implements IJustify {
     _justify!: JustifyStyle;
 
     constructor() {
+        super();
+    }
 
+    stylePattern(): Record<string, string> {
+        if (!this.justify) throw new Error('display undifined')
+        return {
+            justify: `${this.justify}`
+        }
     }
 
     toString(): string {
-        throw new Error("Method not implemented.");
+        return super.toString('justify', this.stylePattern())
     }
+
     value(): string {
-        throw new Error("Method not implemented.");
+        return super.value(this.stylePattern())
     }
+
     public get justify(): JustifyStyle {
         return this._justify;
     }

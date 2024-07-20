@@ -3,8 +3,8 @@ import { BlockSection } from "./block/BlockSection";
 import { TreeBlock } from "./block/IBlock";
 import { BlockItem } from "./block/BlockItem";
 import { BlockSelectingProvider } from "./context/BlockSelectingProvider";
-import { SerializedSpec } from "@frontifyHub/common-type";
 import { onChangeStyleBlock } from "./block/BlockHandler";
+import { BlockConfigure } from "@frontifyHub/common-type";
 
 export const TreeBlocks = () => {
   // MOCK DATA
@@ -13,6 +13,10 @@ export const TreeBlocks = () => {
       block: {
         id: useId(),
         blockType: "section",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
         blocks: [
           {
             id: useId(),
@@ -29,7 +33,7 @@ export const TreeBlocks = () => {
   );
 
   const onChangeStyle = React.useCallback(
-    (styleBlock: SerializedSpec, pathBlock: string) => {
+    (styleBlock: BlockConfigure, pathBlock: string) => {
       onChangeStyleBlock(styleBlock, pathBlock, setTreeBlock);
     },
     [setTreeBlock]
@@ -40,9 +44,11 @@ export const TreeBlocks = () => {
       case "item":
         return <BlockItem block={treeBlock.block} />;
       case "section":
+        const { id, blocks, blockType, path, ...style } = treeBlock.block;
         return (
           <BlockSection
             block={treeBlock.block}
+            style={style}
             onChangeStyleBlock={onChangeStyle}
           />
         );

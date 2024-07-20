@@ -7,21 +7,26 @@ import { BlockConfigure } from "@frontifyHub/common-type";
 
 type BlockSectionProps = {
   block: IBlockSection;
+  style: BlockConfigure;
   onChangeStyleBlock: (styleBlock: BlockConfigure, pathBlock: string) => void;
 };
 
 export const BlockSection = ({
   block,
+  style,
   onChangeStyleBlock,
 }: BlockSectionProps) => {
+  console.log({ style });
   return (
-    <Box>
+    <Box style={style}>
       {block.blocks.map((block) => {
         if (block.blockType === "section") {
+          const { blocks, id, blockType, path, ...style } = block;
           return (
             <SelectedBlockWrapper
               blockView={
                 <BlockSection
+                  style={style}
                   block={block}
                   onChangeStyleBlock={onChangeStyleBlock}
                 />

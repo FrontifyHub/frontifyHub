@@ -1,4 +1,5 @@
 import { IBaseStyle } from "../../models/IBaseStyle";
+import { BaseStyle } from "../base";
 
 export type DisplayAttributes = 'block' |
     'inline-block' |
@@ -26,17 +27,25 @@ export interface IDisplay extends IBaseStyle {
     display: DisplayAttributes
 }
 
-export class Display implements IDisplay {
+export class Display extends BaseStyle implements IDisplay {
     private _display!: DisplayAttributes;
 
     constructor(){
+        super();
     }
     
+    stylePattern(): Record<string, string> {
+        if (!this.display) throw new Error('display undifined')
+        return {
+            display: `${this.display}`
+        }
+    }
+
     toString(): string {
-        throw new Error("Method not implemented.");
+        return super.toString('display', this.stylePattern())
     }
     value(): string {
-        throw new Error("Method not implemented.");
+        return super.value(this.stylePattern())
     }
 
     public get display(): DisplayAttributes {
