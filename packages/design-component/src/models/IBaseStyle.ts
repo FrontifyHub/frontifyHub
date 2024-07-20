@@ -1,4 +1,4 @@
 export interface IBaseStyle{
-    toString(): string;
-    value(): string
+    toString(type?:string, self?: Record<string, string>): string;
+    value(self?: Record<string, string>): string
 }

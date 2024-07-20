@@ -1,5 +1,4 @@
-import { SerializedSpec } from "@frontifyHub/common-type";
-import { BlockConfigure } from "../block/IBlock";
+import { BlockConfigure } from "@frontifyHub/common-type";
 
 export const onChangeSelfStyle = (self: Record<string, any>, style: BlockConfigure) => {
     Object.entries(style).forEach(([key, value]) => {

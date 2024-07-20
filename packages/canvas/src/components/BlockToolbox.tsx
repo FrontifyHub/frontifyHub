@@ -1,11 +1,11 @@
 import React from "react";
 import { IBlock } from "../block/IBlock";
 import { Box, Button, HStack, Text, VStack } from "@chakra-ui/react";
-import { SerializedSpec } from "@frontifyHub/common-type";
+import { BlockConfigure } from "@frontifyHub/common-type";
 
 type BlockToolboxProps = {
   block: IBlock;
-  onChangeStyleBlock: (styleBlock: SerializedSpec, pathBlock: string) => void;
+  onChangeStyleBlock: (styleBlock: BlockConfigure, pathBlock: string) => void;
 };
 
 export const BlockToolbox = React.memo(

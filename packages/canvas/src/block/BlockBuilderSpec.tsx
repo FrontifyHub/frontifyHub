@@ -6,7 +6,8 @@ import {
   ISpacingCategory,
   SpacingCategory,
 } from "@frontifyHub/design-component/src/baseStyleCategories/Spacing/SpacingCategory";
-import { BlockConfigure, IBlockBuilderSpec } from "../block/IBlock";
+import { IBlockBuilderSpec } from "../block/IBlock";
+import { BlockConfigure } from "@frontifyHub/common-type";
 
 export class BlockBuilderSpec implements IBlockBuilderSpec {
   size: ISizingCategory ;

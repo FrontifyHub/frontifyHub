@@ -4,6 +4,7 @@ import { ISpacingCategory } from "@frontifyHub/design-component/src/baseStyleCat
 import { dfsSearchPathBlock } from "../utils/dfsSearchPathBlock";
 import { onChangeSelfStyle } from "../utils/onChangeSelfStyle";
 import { buildPathBlocks } from "./BlockHandler";
+import { BlockConfigure } from "@frontifyHub/common-type";
 
 type EditingComponentType = { editingComponentType: 'divider' | 'button' }
 export interface IBlockItem extends BlockConfigure, EditingComponentType {
@@ -17,17 +18,6 @@ export interface IBlockSection extends BlockConfigure {
     id: string,
     path?: string,
     blocks: IBlock[]
-};
-
-export type BlockConfigure = {
-    width?: string;
-    maxWidth?: string;
-    minWidth?: string;
-    height?: string;
-    maxHeight?: string;
-    minHeight?: string;
-    padding?: string;
-    margin?: string;
 };
 
 export interface IBlockBuilderSpec {

@@ -5,8 +5,7 @@
   "dependencies": {
     "typescript": "latest",
     "@frontifyHub/design-component": "*",
-     "@frontifyHub/common-type": "*",
-     "@frontifyHub/canvas": "*"
+     "@frontifyHub/common-type": "*"
 
   },
   "devDependencies": {

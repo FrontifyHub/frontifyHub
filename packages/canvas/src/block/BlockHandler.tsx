@@ -1,4 +1,4 @@
-import { SerializedSpec } from "@frontifyHub/common-type";
+import { BlockConfigure } from "@frontifyHub/common-type";
 import { SLASH_PATH_BLOCK } from "../constant/slash";
 import { IBlock, TreeBlock } from "./IBlock";
 
@@ -21,7 +21,7 @@ export const buildPathBlocks = (block: IBlock, parentPath: string): IBlock => {
 };
 
 export const onChangeStyleBlock = (
-  styleBlock: SerializedSpec,
+  styleBlock: BlockConfigure,
   pathBlock: string,
   setTreeBlock: React.Dispatch<React.SetStateAction<TreeBlock>>
 ) => {

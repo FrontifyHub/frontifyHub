@@ -1,2 +1,1 @@
-export * from './type-serialized';
-export * from './block';
+export * from './blockConfigure';

@@ -1,6 +1,6 @@
 import { As, PropsOf } from "@chakra-ui/system";
+import { BlockConfigure } from "@frontifyHub/common-type";
 import React from "react";
-import { BlockConfigure } from "@frontifyHub/canvas/src/block/IBlock"
 
 export type Pure2cSSWrapperProps = {
     pureStyles: BlockConfigure;
