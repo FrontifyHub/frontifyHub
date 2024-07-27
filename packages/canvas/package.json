@@ -5,7 +5,6 @@
   "dependencies": {
     "@frontifyHub/design-component": "*",
     "@frontifyHub/common-type": "*",
-    "@frontifyHub/transformer": "*",
     "typescript": "latest"
   },
   "devDependencies": {
