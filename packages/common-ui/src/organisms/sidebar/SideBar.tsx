@@ -2,9 +2,8 @@
 import { Box, Flex, Image, List, ListItem, Spacer, Text } from '@chakra-ui/react';
 import React, { ReactNode, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import LanguageOptions from '../molecules/LanguageOptions';
-import NavItem from '../molecules/NavItem';
-import { ICComponents, ICComponentsSelected, ICDocs, ICDocsSelected, ICGlobal, ICLanguage, ICResources, ICResourcesSelected, ICTemplates, ICTemplatesSelected, ICTheme } from '../atoms'
+import { ICComponents, ICComponentsSelected, ICDocs, ICDocsSelected, ICGlobal, ICHome, ICHomeSelected, ICLanguage, ICResources, ICResourcesSelected, ICTemplates, ICTemplatesSelected, ICTheme } from '../../atoms'
+import NavItem from '@frontifyHub/common-ui/molecules/NavItem';
 
 type NavItemsType = {
   href: string,
@@ -17,10 +16,17 @@ type NavItemsType = {
 const NAV_PAGE_ITEMS: NavItemsType[] = [
   {
     href: "/home",
+    label: "Home",
+    icon: <ICHome />,
+    iconSelected: <ICHomeSelected />,
+    match: ["", "/", "/home"]
+  },
+  {
+    href: "/components",
     label: "Components",
     icon: <ICComponents />,
     iconSelected: <ICComponentsSelected />,
-    match: ["", "/", "/home"]
+    match: ["/components"]
   },
   {
     href: "/templates",

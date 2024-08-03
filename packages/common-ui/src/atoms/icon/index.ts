@@ -8,4 +8,6 @@ export { default as ICResources } from './ICResources.svg';
 export { default as ICResourcesSelected } from './ICResourcesSelected.svg';
 export { default as ICTemplates } from './ICTemplates.svg';
 export { default as ICTemplatesSelected } from './ICTemplatesSelected.svg';
+export { default as ICHome } from './ICHome.svg';
+export { default as ICHomeSelected } from './ICHomeSelected.svg';
 export { default as ICTheme } from './ICTheme.svg';

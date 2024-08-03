@@ -1,6 +1,6 @@
 import { Flex } from '@chakra-ui/react'
 import React, { ReactNode } from 'react'
-import { SideBar } from '../organisms/SideBar'
+import { SideBar } from '../organisms/sidebar/SideBar'
 
 type MainTemplateProps = {
     children: ReactNode
