@@ -7,6 +7,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
 const nextConfig = {
+  transpilePackages: ["@frontifyHub/common-ui"],
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

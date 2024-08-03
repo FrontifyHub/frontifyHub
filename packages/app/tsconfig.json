@@ -20,6 +20,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.json", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.json", ".next/types/**/*.ts", "../common-ui/src/molecules/LanguageOptions.tsx", "../common-ui/src/molecules/NavItem.tsx", "../common-ui/src/templates/SideBar.tsx"],
   "exclude": ["node_modules"]
 }
