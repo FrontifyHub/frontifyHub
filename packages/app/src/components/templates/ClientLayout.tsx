@@ -4,7 +4,7 @@
 import React from 'react';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import { LocalizationProvider } from '@frontifyHub/common/localization';
-import theme from '../../app/theme';
+import theme from '../../styles/theme';
 import Header from './Header';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {

@@ -1,7 +1,7 @@
 import { Box, BoxProps, background } from "@chakra-ui/react";
 import React from "react";
 
-interface CustomBoxProps extends BoxProps {
+type CustomBoxProps = BoxProps & {
   variant?: string;
 }
 

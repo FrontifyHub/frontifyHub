@@ -50,10 +50,10 @@ export default function Header() {
       </ListItem>
 
       <Flex flexDirection="column" gap="20px">
-        <NavItem path="/ComponentsPage" label="Components" icon={<ComponentsIcon />} isSelected={isSelected} onSelect={handleSelect} />
-        <NavItem path="/TemplatesPage" label="Template" icon={<TemplatesIcon />} isSelected={isSelected} onSelect={handleSelect} />
-        <NavItem path="/Docs" label="Docs" icon={<DocsIcon />} isSelected={isSelected} onSelect={handleSelect} />
-        <NavItem path="/Resources" label="Resources" icon={<ResourcesIcon />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="/home" label="Components" icon={<ComponentsIcon />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="/templates" label="Template" icon={<TemplatesIcon />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="/docs" label="Docs" icon={<DocsIcon />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="/resources" label="Resources" icon={<ResourcesIcon />} isSelected={isSelected} onSelect={handleSelect} />
       </Flex>
       
 

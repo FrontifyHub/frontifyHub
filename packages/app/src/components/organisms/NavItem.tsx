@@ -1,4 +1,5 @@
 import { Box, ListItem, Text } from '@chakra-ui/react';
+import Link from 'next/link'
 import React from 'react';
 
 type NavItemProps = {
@@ -44,16 +45,18 @@ const NavItem: React.FC<NavItemProps> = ({ path, label, icon, isSelected, onSele
       {icon}
     </Box>
     {label && (
-      <Text
-        bgGradient={isSelected(path) ? "linear-gradient(180deg, #8A46C9 32.5%, #0005FF 100%)" : "none"}
-        bgClip="text"
-        fontSize="14px"
-        mt="2px"
-        textAlign="center"
-        color={isSelected(path) ? "transparent" : "#A39FA9"}
+      <Link
+        // bgGradient={isSelected(path) ? "linear-gradient(180deg, #8A46C9 32.5%, #0005FF 100%)" : "none"}
+        // bgClip="text"
+        // fontSize="14px"
+        // mt="2px"
+        // textAlign="center"
+        // color={isSelected(path) ? "transparent" : "#A39FA9"}
+
+         href={path}
       >
         {label}
-      </Text>
+      </Link>
     )}
   </ListItem>
 )

@@ -1,3 +1,4 @@
+'use client';
 export * from "./Button/ButtonTheme";
 export * from "./Image/ImageTheme";
 export * from "./Image/index";
