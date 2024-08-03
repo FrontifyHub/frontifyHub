@@ -1,0 +1,19 @@
+{
+  "name": "@frontifyHub/transformer",
+  "version": "0.1.0",
+  "main": "src/",
+  "dependencies": {
+    "typescript": "latest",
+    "@frontifyHub/design-component": "*",
+     "@frontifyHub/common-type": "*"
+
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3"
+  }
+}
