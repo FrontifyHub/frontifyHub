@@ -1,9 +1,10 @@
+"use client"
 import { Box, Flex, Image, List, ListItem, Spacer, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import NavItem from '../organisms/NavItem';
 import LanguageOptions from '../molecules/LanguageOptions';
-import ComponentsIcon from '../atoms/ComponentsIcon.svg';
+import ComponentsIcon from '../atoms/componentsIcon.svg';
 import TemplatesIcon from '../atoms/TemplatesIcon.svg';
 import DocsIcon from '../atoms/DocsIcon.svg';
 import ResourcesIcon from '../atoms/ResourcesIcon.svg';
