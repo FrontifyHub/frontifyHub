@@ -1,16 +1,10 @@
 "use client"
 import { Box, Flex, Image, List, ListItem, Spacer, Text } from '@chakra-ui/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import NavItem from '@frontifyHub/common-ui/src/molecules/NavItem';
-import LanguageOptions from '@frontifyHub/common-ui/src/molecules/LanguageOptions';
-import ComponentsIcon from '../atoms/componentsIcon.svg';
-import TemplatesIcon from '../atoms/TemplatesIcon.svg';
-import DocsIcon from '../atoms/DocsIcon.svg';
-import ResourcesIcon from '../atoms/ResourcesIcon.svg';
-import GlobalIcon from '../atoms/GlobalIcon.svg';
-import LanguageIcon from '../atoms/LanguageIcon.svg';
-import ThemeIcon from '../atoms/ThemeIcon.svg';
+import LanguageOptions from '../molecules/LanguageOptions';
+import NavItem from '../molecules/NavItem';
+import { ICComponents, ICDocs, ICGlobal, ICLanguage, ICResources, ICTemplates, ICTheme } from '../atoms'
 
 
 export default function SideBar() {
@@ -51,18 +45,18 @@ export default function SideBar() {
       </ListItem>
 
       <Flex flexDirection="column" gap="20px">
-        <NavItem path="/home" label="Components" icon={<ComponentsIcon />} isSelected={isSelected} onSelect={handleSelect} />
-        <NavItem path="/templates" label="Template" icon={<TemplatesIcon />} isSelected={isSelected} onSelect={handleSelect} />
-        <NavItem path="/docs" label="Docs" icon={<DocsIcon />} isSelected={isSelected} onSelect={handleSelect} />
-        <NavItem path="/resources" label="Resources" icon={<ResourcesIcon />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="/home" label="Components" icon={<ICComponents />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="/templates" label="Template" icon={<ICTemplates />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="/docs" label="Docs" icon={<ICDocs />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="/resources" label="Resources" icon={<ICResources />} isSelected={isSelected} onSelect={handleSelect} />
       </Flex>
       
 
       <Flex flexDirection="column" gap="15px" mt="50px">
-        <NavItem path="global" icon={<GlobalIcon />} isSelected={isSelected} onSelect={handleSelect} />
-        <NavItem path="language" icon={<LanguageIcon />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="global" icon={<ICGlobal />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="language" icon={<ICLanguage />} isSelected={isSelected} onSelect={handleSelect} />
         <LanguageOptions isVisible={isLanguageVisible} />
-        <NavItem path="theme" icon={<ThemeIcon />} isSelected={isSelected} onSelect={handleSelect} />
+        <NavItem path="theme" icon={<ICTheme />} isSelected={isSelected} onSelect={handleSelect} />
       </Flex>
     </List>
   )
