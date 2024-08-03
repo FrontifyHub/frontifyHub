@@ -1,7 +1,8 @@
 'use client';
-export * from "./Button/ButtonTheme";
-export * from "./Image/ImageTheme";
-export * from "./Image/index";
+export * from "./button/ButtonTheme";
+export * from "./image/ImageTheme";
+export * from "./image/CustomImage";
 export * from "./Text/TextTheme";
 export * from "./Box/BoxTheme";
-export * from "./Box/index";
+export * from "./box/CustomBox";
+export * from './icon'

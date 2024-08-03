@@ -2,8 +2,8 @@
 import { Box, Flex, Image, List, ListItem, Spacer, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import NavItem from '../organisms/NavItem';
-import LanguageOptions from '../molecules/LanguageOptions';
+import NavItem from '@frontifyHub/common-ui/src/molecules/NavItem';
+import LanguageOptions from '@frontifyHub/common-ui/src/molecules/LanguageOptions';
 import ComponentsIcon from '../atoms/componentsIcon.svg';
 import TemplatesIcon from '../atoms/TemplatesIcon.svg';
 import DocsIcon from '../atoms/DocsIcon.svg';
@@ -12,7 +12,8 @@ import GlobalIcon from '../atoms/GlobalIcon.svg';
 import LanguageIcon from '../atoms/LanguageIcon.svg';
 import ThemeIcon from '../atoms/ThemeIcon.svg';
 
-export default function Header() {
+
+export default function SideBar() {
   const pathname = usePathname();
   const router = useRouter();
   const [selected, setSelected] = useState<string>(pathname || "");

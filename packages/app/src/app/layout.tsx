@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "../styles/theme";
 import "../styles/globals.css";
-import Header from "../components/templates/Header";
+import SideBar from "@frontifyHub/common-ui/src/templates/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ChakraProvider theme={theme}>
-            <Header />
+            <SideBar />
             {children}
         </ChakraProvider>
       </body>
