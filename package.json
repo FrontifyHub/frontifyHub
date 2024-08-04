@@ -34,6 +34,8 @@
     "@chakra-ui/react": "^2.8.2",
     "@nikolovlazar/chakra-ui-prose": "^1.2.1",
     "lodash": "^4.17.21",
-    "styled-components": "^6.1.11"
+    "react-icons": "^5.2.1",
+    "styled-components": "^6.1.11",
+    "typescript": "^5.5.4"
   }
 }
